@@ -28,7 +28,7 @@ To compile the stack, run
     TOPOBANK_UID=$(id -u) TOPOBANK_GID=$(id -g) docker compose build
 
 Note that you need the `compose <https://docs.docker.com/compose/install/linux/>`_
-plugin of docker or the standalone `docker-compose <https://github.com/docker/compose>`_.
+plugin of docker or the (old) standalone `docker-compose <https://pypi.org/project/docker-compose/>`_ that can be installed via `pip`.
 
 Running
 -------
