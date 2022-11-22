@@ -1,0 +1,140 @@
+version: '3'
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+  minio_data: {}
+  exchange_data: {}
+
+networks:
+  # this network was added in order to define an alias for the minio container
+  # See below at "minio" service
+  topobank_net:
+
+services:
+  django: &django
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile
+      args:
+        USER_ID: ${TOPOBANK_UID:-0}
+        GROUP_ID: ${TOPOBANK_GID:-0}
+    shm_size: '2gb'
+    image: topobank_development_django
+    depends_on:
+      - postgres
+      - mailhog
+      - redis
+    volumes:
+      - ./topobank:/app-topobank
+      - ./topobank-statistics:/app-topobank-statistics
+      - ./topobank-contact:/app-topobank-contact
+      - exchange_data:/tmp/exchange
+    env_file:
+      - ./.envs/.django
+      - ./.envs/.postgres
+    ports:
+      - "8000:8000"
+    networks:
+      - topobank_net
+    command: /start
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/postgres/Dockerfile
+    image: topobank_production_postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.postgres
+    ports:
+      - "5433:5432"
+    networks:
+      - topobank_net
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    ports:
+      - "8025:8025"
+    networks:
+      - topobank_net
+
+  redis:
+    image: redis:6-alpine
+    networks:
+      - topobank_net
+
+  celeryworker:
+    <<: *django
+    image: topobank_development_celeryworker
+    depends_on:
+      - postgres
+      - redis
+      - mailhog
+    ports: [] # overwrites ports from django entry
+    command: /start-celeryworker
+
+  celerybeat:
+    <<: *django
+    image: topobank_development_celerybeat
+    depends_on:
+      - postgres
+      - redis
+      - mailhog
+    ports: [] # overwrites ports from django entry
+    command: /start-celerybeat
+
+  #
+  # use can this built-in S3 server for development if you don't have an external one
+  #
+  # The setting
+  #   MINIO_API_CORS_ALLOW_ORIGIN=localhost:8000
+  # enables fetching data from S3 while coming from localhost:8000.
+  # Basically, it sets the header "Access-Control-Allow-Origin" in HTTP responses.
+  # For more information search for "CORS" or see here: https://web.dev/cross-origin-resource-sharing/
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      topobank_net:
+        aliases:
+          # For localhost access, add the following to your /etc/hosts
+          # 127.0.0.1  topobank-minio-alias
+          # and make sure that in settings, the AWS URL also uses this hostname;
+          # Like this, the URL given for accessing the S3 can be resolved
+          # on the host computer, because minio is exposed to port 9000 on host
+          - topobank-minio-alias
+
+    volumes:
+      - minio_data:/data
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=secret12
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  minio-create-buckets:
+    image: minio/mc
+    depends_on:
+      minio:
+        condition: service_healthy
+    networks:
+      - topobank_net
+    environment:
+      - BUCKET_NAME=topobank-dev
+      - ENDPOINT=http://minio:9000
+    entrypoint: >
+        /bin/sh -c "
+        /usr/bin/mc config host add minio http://minio:9000 admin secret12;
+        /usr/bin/mc mb minio/topobank-dev;
+        /usr/bin/mc policy set public minio/topobank-dev;
+        exit 0;
+        "
