@@ -6,19 +6,17 @@ plugins.
 
 The modules
 
-* topobank
-* topobank-statistics
-* topobank-contact
+* `topobank <https://github.com/ContactEngineering/topobank>`_
+* `topobank-statistics <https://github.com/ContactEngineering/topobank-statistics>`_
+* `topobank-contact <https://github.com/ContactEngineering/topobank-contact>`_
 
 are included as submodules. The stack consists of
 
-* the main _topobank_ instance,
+* the main *topobank* instance,
 * `Celery <https://github.com/celery/celery>`_ workers and beat,
-* a postgres database,
+* a Postgres database,
 * a Redis server and
-* a minio S3
-
-server.
+* a Minio S3 server.
 
 Compiling
 ---------
