@@ -14,9 +14,9 @@ are included as submodules. The stack consists of
 
 * the main *topobank* instance,
 * `Celery <https://github.com/celery/celery>`_ workers and beat,
-* a Postgres database,
-* a Redis server and
-* a Minio S3 server.
+* a `PostgreSQL <https://www.postgresql.org/>`_ database,
+* a `Redis <https://redis.io/>`_ server and
+* a `Minio <https://min.io/>`_ S3 server.
 
 Compiling
 ---------
