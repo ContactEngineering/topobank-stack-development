@@ -27,8 +27,8 @@ services:
       - redis
     volumes:
       - ./topobank:/app-topobank
-      - ./topobank-statistics:/app-topobank-statistics
-      - ./topobank-contact:/app-topobank-contact
+      - ./topobank-statistics:/plugin-topobank-statistics
+      - ./topobank-contact:/plugin-topobank-contact
       - exchange_data:/tmp/exchange
     env_file:
       - ./.envs/.django

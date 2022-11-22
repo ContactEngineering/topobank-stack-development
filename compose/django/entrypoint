@@ -39,8 +39,4 @@ until postgres_ready; do
 done
 >&2 echo 'PostgreSQL is available'
 
-#echo "About to execute: exec " "$@"
-#echo "DATABASE_URL: ${DATABASE_URL}"
-
-
 exec "$@"

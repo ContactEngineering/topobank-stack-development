@@ -4,10 +4,12 @@ set -o errexit
 set -o nounset
 
 echo "-> Installing plugins.."
-pip install -e /topobank-statistics
-pip install -e /topobank-contact
+for plugin in ${TOPOBANK_PLUGINS}; do
+  echo "* ${plugin}"
+  pip install -e /plugin-${plugin}
+done
 
 echo "-> Starting Celery beat.."
 
 rm -f './celerybeat.pid'
-celery -A topobank.taskapp  --workdir /app beat -l INFO
+celery -A topobank.taskapp beat -l INFO

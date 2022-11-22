@@ -76,27 +76,9 @@ RUN addgroup django --gid ${GROUP_ID} \
 # TODO check, can we use --disabled-login ??
 
 #
-# Prepare application code
-#
-#RUN mkdir -p /app
-
-#COPY --chown=django config /app/config
-#COPY --chown=django docs /app/docs
-#COPY --chown=django locale /app/locale
-## COPY --chown=django requirements /app/requirements
-#COPY --chown=django splinter_tests /app/splinter_tests
-#COPY --chown=django topobank /app/topobank
-#
-#RUN rm -Rf app/venv app/.idea app/.pytest_cache app/.git app/__pycache__ app/media/topographies app/media/analyses
-
-
-# is the following needed?
-# RUN chmod -R u+w /app
-
-#
 # Finalize..
 #
-WORKDIR /app
+WORKDIR /app-topobank
 
 USER django
 

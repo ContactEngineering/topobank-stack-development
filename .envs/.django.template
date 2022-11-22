@@ -83,3 +83,9 @@ AWS_S3_VERIFY=False  # currently the certificate is not valid
 # for more information see: https://godoc.org/github.com/robfig/cron
 DBBACKUP_SCHEDULE=@hourly
 #DBBACKUP_SCHEDULE=none
+
+# Topobank Plugins
+# ------------------------------------------------------------------------------
+#
+# List of (optional) plugins to TopoBank.
+TOPOBANK_PLUGINS="topobank-statistics topobank-contact"

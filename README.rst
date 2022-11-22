@@ -25,10 +25,21 @@ To compile the stack, run
 
 .. code-block::
 
-    docker compose build
+    TOPOBANK_UID=$(id -u) TOPOBANK_GID=$(id -g) docker compose build
 
 Note that you need the `compose <https://docs.docker.com/compose/install/linux/>`_
 plugin of docker or the standalone `docker-compose <https://github.com/docker/compose>`_.
+
+Running
+-------
+
+Run the whole stack with
+
+.. code-block::
+
+   docker compose up
+
+The stack automatically intitializes the database and creates and S3 bucket.
 
 Funding
 -------
