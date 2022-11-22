@@ -43,28 +43,28 @@ RUN pip install --upgrade pip
 WORKDIR /
 RUN pip install --upgrade setuptools
 
-COPY ./requirements/local.txt /requirements/local.txt
-RUN pip install -r /requirements/local.txt --ignore-installed --no-binary numpy
+COPY ./requirements/development.txt /requirements/development.txt
+RUN pip install -r /requirements/development.txt --ignore-installed --no-binary numpy
 
 
 # Here the entrypoint from production settings is taken!
-COPY ./compose/local/django/entrypoint /entrypoint
+COPY ./compose/django/entrypoint /entrypoint
 RUN sed -i 's/\r//' /entrypoint
 RUN chmod +x /entrypoint
 
-COPY ./compose/local/django/start /start
+COPY ./compose/django/start /start
 RUN sed -i 's/\r//' /start
 RUN chmod +x /start
 
-COPY ./compose/local/django/celery/worker/start /start-celeryworker
+COPY ./compose/django/celery/worker/start /start-celeryworker
 RUN sed -i 's/\r//' /start-celeryworker
 RUN chmod +x /start-celeryworker
 
-COPY ./compose/local/django/celery/beat/start /start-celerybeat
+COPY ./compose/django/celery/beat/start /start-celerybeat
 RUN sed -i 's/\r//' /start-celerybeat
 RUN chmod +x /start-celerybeat
 
-# COPY ./compose/local/django/celery/flower/start /start-flower
+# COPY ./compose/django/celery/flower/start /start-flower
 # RUN sed -i 's/\r//' /start-flower
 # RUN chmod +x /start-flower
 
@@ -78,16 +78,16 @@ RUN addgroup django --gid ${GROUP_ID} \
 #
 # Prepare application code
 #
-# COPY --chown=django . /app
-RUN mkdir -p /app
-COPY --chown=django config /app/config
-COPY --chown=django docs /app/docs
-COPY --chown=django locale /app/locale
-# COPY --chown=django requirements /app/requirements
-COPY --chown=django splinter_tests /app/splinter_tests
-COPY --chown=django topobank /app/topobank
+#RUN mkdir -p /app
 
-RUN rm -Rf app/venv app/.idea app/.pytest_cache app/.git app/__pycache__ app/media/topographies app/media/analyses
+#COPY --chown=django config /app/config
+#COPY --chown=django docs /app/docs
+#COPY --chown=django locale /app/locale
+## COPY --chown=django requirements /app/requirements
+#COPY --chown=django splinter_tests /app/splinter_tests
+#COPY --chown=django topobank /app/topobank
+#
+#RUN rm -Rf app/venv app/.idea app/.pytest_cache app/.git app/__pycache__ app/media/topographies app/media/analyses
 
 
 # is the following needed?
@@ -97,16 +97,6 @@ RUN rm -Rf app/venv app/.idea app/.pytest_cache app/.git app/__pycache__ app/med
 # Finalize..
 #
 WORKDIR /app
-
-#
-# Install plugins (needs topobank package installed above as dependency)
-#
-#COPY ./requirements/plugins.txt /requirements/plugins.txt
-#COPY ./compose/local/django/pip-packages /pip-packages
-# RUN ls -al /pip-packages
-#RUN pip install -r /requirements/plugins.txt
-#RUN rm -Rf /requirements /pip-packages
-
 
 USER django
 
