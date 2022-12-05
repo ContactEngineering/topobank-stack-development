@@ -18,6 +18,19 @@ are included as submodules. The stack consists of
 * a `Redis <https://redis.io/>`_ server and
 * a `Minio <https://min.io/>`_ S3 server.
 
+Cloning
+-------
+
+This repository uses `git submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_. 
+You need to initialize and update them after cloning this repository, i.e. with
+
+.. code-block::
+
+    git clone https://github.com/ContactEngineering/topobank-stack-development.git
+    cd topobank-stack-development/
+    git submodule init
+    git submodule update
+
 Compiling
 ---------
 
@@ -28,7 +41,7 @@ To compile the stack, run
     TOPOBANK_UID=$(id -u) TOPOBANK_GID=$(id -g) docker compose build
 
 Note that you need the `compose <https://docs.docker.com/compose/install/linux/>`_
-plugin of docker or the standalone `docker-compose <https://github.com/docker/compose>`_.
+plugin of docker or the (old) standalone `docker-compose <https://pypi.org/project/docker-compose/>`_ that can be installed via `pip`.
 
 You could also copy the template file `.env.template` to `.env`
 and fill in these two numbers, so you don't have to prefix the `docker compose` commands.
