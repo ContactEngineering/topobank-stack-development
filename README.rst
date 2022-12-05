@@ -30,6 +30,9 @@ To compile the stack, run
 Note that you need the `compose <https://docs.docker.com/compose/install/linux/>`_
 plugin of docker or the standalone `docker-compose <https://github.com/docker/compose>`_.
 
+You could also copy the template file `.env.template` to `.env`
+and fill in these two numbers, so you don't have to prefix the `docker compose` commands.
+
 Running
 -------
 
@@ -40,6 +43,37 @@ Run the whole stack with
    docker compose up
 
 The stack automatically intitializes the database and creates and S3 bucket.
+
+When running the first time or each time when the static files have changed, run
+
+.. code-block::
+
+    docker compose run --rm django python manage.py collectstatic
+
+to update the static files.
+
+Also, when running the first time, in order to see the analysis function
+from the plugins make sure that you've added an organization `World`, which
+is linked to the group `all` and add permissions for all commonly available plugins:
+
+1. First give your development user admin permissions such that you can
+   enter the admin interface:
+
+   .. code-block::
+
+    docker compose run --rm django manage.py grant_admin_permissions your_username
+
+   You have to replace `your_user`. In order to find it, login with your ORCID
+   and enter the "User Profile" page and take the last part of the URL.
+   Example: If the URL is `https://contact.engineering/users/anna/`, then `your_username` is `anna`.
+
+2. After granting the permission, you can enter the admin page. The link to the admin page
+   can be found by this user in the menu item which is named after the user.
+
+3. In the `Organization` model, create a new organization with name `World`. As available plugins,
+   enter e.g. `topobank_contact, topobank_statistics`. As group, choose `all`.
+
+Then all users, including the anonymous user, will be able the use the mentioned plugins.
 
 Funding
 -------
