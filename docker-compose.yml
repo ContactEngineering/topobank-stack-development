@@ -29,6 +29,7 @@ services:
       - ./topobank:/app-topobank
       - ./topobank-statistics:/plugin-topobank-statistics
       - ./topobank-contact:/plugin-topobank-contact
+      - ./topobank-ml:/plugin-topobank-ml
       - exchange_data:/tmp/exchange
     env_file:
       - ./.envs/.django
