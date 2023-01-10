@@ -1,10 +1,9 @@
-FROM continuumio/miniconda3
-# FROM ubuntu:18.04
-#FROM python:3.7-alpine
+# While an Alpine-based container would be preferable, we use a glibc-based
+# container because there are only have manylinux wheels for numpy and scipy.
+# See here: https://github.com/numpy/numpy/issues/20089
+FROM python:3.10-slim
 
 ENV PYTHONUNBUFFERED 1
-ENV CFLAGS "-I/usr/include/eigen3/"
-# This is a workaround for https://gitlab.com/muspectre/muspectre/-/issues/144
 
 ARG USER_ID
 ARG GROUP_ID
@@ -14,17 +13,18 @@ ARG GROUP_ID
 #
 RUN apt-get update \
   && apt-get install --yes apt-utils \
-  && apt-get install --yes libfftw3-3 libfftw3-dev libopenblas-base libopenblas-dev libeigen3-dev gcc g++ gettext \
-  # Pillow requirements
-  && apt-get install --yes libjpeg-dev zlib1g-dev libfreetype6-dev \
-     liblcms2-dev libtiff-dev tk-dev tcl-dev librabbitmq-dev \
-  # Requirements in order to built libmufft
-  # (curl is used to download pybind11 and Eigen3)
-  && apt-get install --yes curl \
-  # && apt-get install --yes mpicc libfftw3-mpi-dev
-  # && apt-get install --yes clang-5 libfftw3-dev
-  && apt-get install --yes libmemcached-dev \
-  && apt-get install --yes libnetcdf-dev
+  # envsubst: gettext-base \
+  # Pillow requirements: libjpeg, libtiff, zlib1g, libfreetype6, liblcms2 \
+  # psycopg2 requirements: libpq \
+  && apt-get install --yes \
+    gettext-base \
+    git gcc g++ \
+    libjpeg-dev \
+    libtiff-dev \
+    zlib1g-dev \
+    libfreetype6-dev \
+    liblcms2-dev \
+    libpq-dev
 
 # clean up image
 RUN apt-get -qy autoremove
@@ -44,7 +44,7 @@ WORKDIR /
 RUN pip install --upgrade setuptools
 
 COPY ./requirements/development.txt /requirements/development.txt
-RUN pip install -r /requirements/development.txt --ignore-installed --no-binary numpy
+RUN pip install -r /requirements/development.txt --ignore-installed
 
 
 # Here the entrypoint from production settings is taken!
