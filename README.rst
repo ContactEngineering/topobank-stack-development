@@ -31,6 +31,73 @@ You need to initialize and update them after cloning this repository, i.e. with
     git submodule init
     git submodule update
 
+or use a command like
+
+.. code-block::
+
+    git clone --recurse-submodules git@github.com:ContactEngineering/topobank-stack-development.git
+
+Configuring
+-----------
+
+Enter the project directory:
+
+.. code-block::
+
+    cd topobank-stack-development
+
+In order to run the application, copy the configuration template by
+
+.. code-block::
+
+    cp .envs/.django.template .envs/.django
+
+and edit the file :code:`.envs/.django` according to your needs, fill out the values needed.
+
+What you absolutely need to replace the values here:
+
+.. code-block::
+
+    ORCID_CLIENT_ID=<replace with your client ID from ORCID>
+    ORCID_SECRET=<replace with your secret from ORCID>
+
+In order to find these values, register a public API client (see next chapter).
+
+If you want to create test DOIs from the application, also provide values
+for :code:`DATACITE_USERNAME`, :code:`DATACITE_PASSWORD`, and :code:`PUBLICATION_DOI_PREFIX`.
+By default the DOI generation is skipped.
+
+The rest of the settings should be fine as default for development.
+
+Register a Public API Client
+............................
+
+You need to register a public API client on the ORCID website
+for the following purposes:
+
+- get a client API + secret in order to be able to authenticate against orcid.org
+- set a redirect URL to which Topobank will redirect after successful authentication
+
+See `here <https://support.orcid.org/hc/en-us/articles/360006897174>`_ for more information
+how to do it.
+As redirect URL add all of these
+
+- for development: http://127.0.0.1:8000/accounts/orcid/login/callback
+- for development: http://localhost:8000/accounts/orcid/login/callback
+
+One of the redirect URL configured at orcid.org must exactly match the redirect URL, which is
+transferred from the TopoBank application during the login process.
+This means, if you use
+
+ http://localhost:8000
+
+i.e. :code:`localhost` instead of :code:`127.0.0.1` during development, you'll need also redirect
+url with :code:`localhost` which is
+
+ http://localhost:8000/accounts/orcid/login/callback
+
+If you have both :code:`localhost` and :code:`127.0.0.1`, it shoudn't matter.
+
 Compiling
 ---------
 
@@ -41,10 +108,13 @@ To compile the stack, run
     TOPOBANK_UID=$(id -u) TOPOBANK_GID=$(id -g) docker compose build
 
 Note that you need the `compose <https://docs.docker.com/compose/install/linux/>`_
-plugin of docker or the (old) standalone `docker-compose <https://pypi.org/project/docker-compose/>`_ that can be installed via `pip`.
+plugin of docker or the (old) standalone `docker-compose <https://pypi.org/project/docker-compose/>`_ that can be
+installed via :code:`pip`.
 
-You could also copy the template file `.env.template` to `.env`
-and fill in these two numbers, so you don't have to prefix the `docker compose` commands.
+You could also copy the template file :code:`.env.template` to :code:`.env`
+and fill in these two numbers, so you don't have to prefix the :code:`docker compose` commands.
+You can find the ids by calling the :code:`id` command on Linux, this will return the :code:`uid` and possible
+:code:`gid`values.
 
 Running
 -------
@@ -66,8 +136,8 @@ When running the first time or each time when the static files have changed, run
 to update the static files.
 
 Also, when running the first time, in order to see the analysis function
-from the plugins make sure that you've added an organization `World`, which
-is linked to the group `all` and add permissions for all commonly available plugins:
+from the plugins make sure that you've added an organization :code:`World`, which
+is linked to the group :code:`all` and add permissions for all commonly available plugins:
 
 1. First give your development user admin permissions such that you can
    enter the admin interface:
@@ -76,15 +146,16 @@ is linked to the group `all` and add permissions for all commonly available plug
 
     docker compose run --rm django manage.py grant_admin_permissions your_username
 
-   You have to replace `your_user`. In order to find it, login with your ORCID
+   You have to replace :code:`your_username` with the correct username.
+   In order to find it, login with your ORCID
    and enter the "User Profile" page and take the last part of the URL.
-   Example: If the URL is `https://contact.engineering/users/anna/`, then `your_username` is `anna`.
+   Example: If the URL is :code:`https://contact.engineering/users/anna/`, then :code:`your_username` is :code:`anna`.
 
 2. After granting the permission, you can enter the admin page. The link to the admin page
    can be found by this user in the menu item which is named after the user.
 
-3. In the `Organization` model, create a new organization with name `World`. As available plugins,
-   enter e.g. `topobank_contact, topobank_statistics`. As group, choose `all`.
+3. In the :code:`Organization` model, create a new organization with name :code:`World`. As available plugins,
+   enter e.g. :code:`topobank_contact, topobank_statistics`. As group, choose :code:`all`.
 
 Then all users, including the anonymous user, will be able the use the mentioned plugins.
 
