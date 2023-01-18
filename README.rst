@@ -144,7 +144,7 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
 
    .. code-block::
 
-    docker compose run --rm django manage.py grant_admin_permissions your_username
+    docker compose run --rm django python manage.py grant_admin_permissions your_username
 
    You have to replace :code:`your_username` with the correct username.
    In order to find it, login with your ORCID
