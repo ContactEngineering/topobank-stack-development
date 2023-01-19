@@ -114,7 +114,7 @@ installed via :code:`pip`.
 You could also copy the template file :code:`.env.template` to :code:`.env`
 and fill in these two numbers, so you don't have to prefix the :code:`docker compose` commands.
 You can find the ids by calling the :code:`id` command on Linux, this will return the :code:`uid` and possible
-:code:`gid`values.
+:code:`gid` values.
 
 Running
 -------
@@ -149,7 +149,7 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
    You have to replace :code:`your_username` with the correct username.
    In order to find it, login with your ORCID
    and enter the "User Profile" page and take the last part of the URL.
-   Example: If the URL is :code:`https://contact.engineering/users/anna/`, then :code:`your_username` is :code:`anna`.
+   Example: If the URL is :code:`https://localhost:8000/users/anna/`, then :code:`your_username` is :code:`anna`.
 
 2. After granting the permission, you can enter the admin page. The link to the admin page
    can be found by this user in the menu item which is named after the user.
