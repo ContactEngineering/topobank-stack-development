@@ -125,7 +125,7 @@ Run the whole stack with
 
    docker compose up
 
-The stack automatically initiializes the database and creates an S3 bucket.
+The stack automatically initializes the database and creates an S3 bucket.
 
 You are now able to log in with via ORCID and upload data, but you will not have access to any analysis functionality.
 
