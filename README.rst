@@ -125,7 +125,9 @@ Run the whole stack with
 
    docker compose up
 
-The stack automatically intitializes the database and creates and S3 bucket.
+The stack automatically initiializes the database and creates an S3 bucket.
+
+You are now able to log in with via ORCID and upload data, but you will not have access to any analysis functionality.
 
 When running the first time or each time when the static files have changed, run
 
@@ -149,7 +151,7 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
    You have to replace :code:`your_username` with the correct username.
    In order to find it, login with your ORCID
    and enter the "User Profile" page and take the last part of the URL.
-   Example: If the URL is :code:`https://localhost:8000/users/anna/`, then :code:`your_username` is :code:`anna`.
+   Example: If the URL is :code:`https://contact.engineering/users/anna/`, then :code:`your_username` is :code:`anna`.
 
 2. After granting the permission, you can enter the admin page. The link to the admin page
    can be found by this user in the menu item which is named after the user.
@@ -158,6 +160,13 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
    enter e.g. :code:`topobank_contact, topobank_statistics`. As group, choose :code:`all`.
 
 Then all users, including the anonymous user, will be able the use the mentioned plugins.
+
+To have the topobank platform communicate with the local minio s3 server,
+you will aso have to add :code:`topobank-minio-alias` as another name for :code:`localhost` to your :code:`/etc/hosts` file, e.g.
+
+.. code-block::
+
+    127.0.0.1 localhost topobank-minio-alias
 
 Funding
 -------
