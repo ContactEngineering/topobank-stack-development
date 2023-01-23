@@ -168,7 +168,23 @@ you will aso have to add :code:`topobank-minio-alias` as another name for :code:
 
     127.0.0.1 localhost topobank-minio-alias
 
+Updating plugins
+----------------
+
+List all submodules in the :code:`.envs/.django` in a line
+
+.. code-block::
+
+    TOPOBANK_PLUGINS="topobank-statistics topobank-contact"
+
+separated by whitespace.
+
+When requirements in submodules change, update
+:code:`requirements/development.txt` by providing :code:`pip-compile`
+and running :code:`make` from within :code:`requirements`.
+
 Funding
 -------
 
 Development of this project is funded by the `European Research Council <https://erc.europa.eu>`_ within `Starting Grant 757343 <https://cordis.europa.eu/project/id/757343>`_.
+
