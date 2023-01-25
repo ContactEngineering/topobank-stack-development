@@ -151,7 +151,7 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
    You have to replace :code:`your_username` with the correct username.
    In order to find it, login with your ORCID
    and enter the "User Profile" page and take the last part of the URL.
-   Example: If the URL is :code:`https://contact.engineering/users/anna/`, then :code:`your_username` is :code:`anna`.
+   Example: If the URL is :code:`https://localhost/users/anna/`, then :code:`your_username` is :code:`anna`.
 
 2. After granting the permission, you can enter the admin page. The link to the admin page
    can be found by this user in the menu item which is named after the user.
