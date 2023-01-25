@@ -157,7 +157,8 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
    can be found by this user in the menu item which is named after the user.
 
 3. In the :code:`Organization` model, create a new organization with name :code:`World`. As available plugins,
-   enter e.g. :code:`topobank_contact, topobank_statistics`. As group, choose :code:`all`.
+   enter e.g. :code:`topobank_contact, topobank_statistics`. Pay attention to suing underscores where otherwise dashes appear.
+   As group, choose :code:`all`.
 
 Then all users, including the anonymous user, will be able the use the mentioned plugins.
 
@@ -182,6 +183,14 @@ separated by whitespace.
 When requirements in submodules change, update
 :code:`requirements/development.txt` by providing :code:`pip-compile`
 and running :code:`make` from within :code:`requirements`.
+
+Plugins with private dependencies may require access tokens provided
+in environment variables during this process. These secret tokens 
+will be embedded as *clear text* in :code:`requirements/development.txt`.
+Thus, do not commit this requirements file.
+
+Make sure all submodules point to the head of the respective branch
+you want to use in your development stack.
 
 Funding
 -------
