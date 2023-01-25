@@ -127,7 +127,7 @@ Run the whole stack with
 
 The stack automatically initializes the database and creates an S3 bucket.
 
-You are now able to log in with via ORCID and upload data, but you will not have access to any analysis functionality.
+You are now able to log in with via ORCID and upload data, but you will not have access to any analysis functionality yet.
 
 When running the first time or each time when the static files have changed, run
 
