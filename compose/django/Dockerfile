@@ -43,9 +43,7 @@ RUN pip install --upgrade pip
 WORKDIR /
 RUN pip install --upgrade setuptools
 
-COPY ./requirements/development.txt /requirements/development.txt
-RUN --mount=type=cache,target=/root/.cache pip install -r /requirements/development.txt --ignore-installed
-
+RUN --mount=type=cache,target=/root/.cache --mount=type=secret,id=development_txt pip install -r /run/secrets/development_txt --ignore-installed
 
 # Here the entrypoint from production settings is taken!
 COPY ./compose/django/entrypoint /entrypoint
