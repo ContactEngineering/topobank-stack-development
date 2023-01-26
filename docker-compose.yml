@@ -38,7 +38,7 @@ services:
       - "8000:8000"
     networks:
       - topobank_net
-    command: /start
+    command: /scripts/start-gunicorn.sh
 
   postgres:
     build:
@@ -75,7 +75,7 @@ services:
       - redis
       - mailhog
     ports: [] # overwrites ports from django entry
-    command: /start-celeryworker
+    command: /scripts/start-celeryworker.sh
 
   celerybeat:
     <<: *django
@@ -85,7 +85,7 @@ services:
       - redis
       - mailhog
     ports: [] # overwrites ports from django entry
-    command: /start-celerybeat
+    command: /scripts/start-celerybeat.sh
 
   #
   # use can this built-in S3 server for development if you don't have an external one
