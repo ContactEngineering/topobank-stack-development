@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/topobank" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/topobank-contact" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/topobank-ml" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/topobank-statistics" vcs="Git" />
   </component>
 </project>
