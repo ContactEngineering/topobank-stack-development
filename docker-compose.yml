@@ -26,10 +26,7 @@ services:
       - mailhog
       - redis
     volumes:
-      - ./topobank:/app-topobank
-      - ./topobank-statistics:/plugin-topobank-statistics
-      - ./topobank-contact:/plugin-topobank-contact
-      - ./topobank-ml:/plugin-topobank-ml
+      - .:/development-stack
       - exchange_data:/tmp/exchange
     env_file:
       - ./.envs/.django
