@@ -116,8 +116,8 @@ and fill in these two numbers, so you don't have to prefix the :code:`docker com
 You can find the ids by calling the :code:`id` command on Linux, this will return the :code:`uid` and possible
 :code:`gid` values.
 
-Running
--------
+Running (locally)
+-----------------
 
 Run the whole stack with
 
@@ -127,15 +127,7 @@ Run the whole stack with
 
 The stack automatically intitializes the database and creates and S3 bucket.
 
-When running the first time or each time when the static files have changed, run
-
-.. code-block::
-
-    docker compose run --rm django python manage.py collectstatic
-
-to update the static files.
-
-Also, when running the first time, in order to see the analysis function
+When running the first time, in order to see the analysis function
 from the plugins make sure that you've added an organization :code:`World`, which
 is linked to the group :code:`all` and add permissions for all commonly available plugins:
 
@@ -158,6 +150,16 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
    enter e.g. :code:`topobank_contact, topobank_statistics`. As group, choose :code:`all`.
 
 Then all users, including the anonymous user, will be able the use the mentioned plugins.
+
+Testing (in PyCharm)
+--------------------
+
+To configure tests in PyCharm, please consider the following:
+
+* In `File->Settings->Docker->Tools` enable Docker Compose V2
+* Create a new interpreter `On Docker Compose...` that runs within the compose configuration
+* Create a new `pytest` configuration that runs within this interpreter. Add
+  `DJANGO_SETTINGS_MODULE=config.settings.test` to the environment.
 
 Funding
 -------
