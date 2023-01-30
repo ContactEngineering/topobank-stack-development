@@ -1,12 +1,16 @@
 [submodule "topobank"]
 	path = topobank
 	url = git@github.com:ContactEngineering/TopoBank.git
+	branch = develop
 [submodule "topobank-statistics"]
 	path = topobank-statistics
 	url = git@github.com:ContactEngineering/topobank-statistics.git
+	branch = develop
 [submodule "topobank-contact"]
 	path = topobank-contact
 	url = git@github.com:ContactEngineering/topobank-contact.git
+	branch = develop
 [submodule "topobank-ml"]
 	path = topobank-ml
 	url = git@github.com:ContactEngineering/topobank-ml.git
+	branch = develop

@@ -61,7 +61,7 @@ RUN addgroup django --gid ${GROUP_ID} \
 #
 # Finalize..
 #
-WORKDIR /app-topobank
+WORKDIR /development-stack/topobank
 
 USER django
 
