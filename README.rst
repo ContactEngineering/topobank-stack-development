@@ -116,8 +116,8 @@ and fill in these two numbers, so you don't have to prefix the :code:`docker com
 You can find the ids by calling the :code:`id` command on Linux, this will return the :code:`uid` and possible
 :code:`gid` values.
 
-Running
--------
+Running (locally)
+-----------------
 
 Run the whole stack with
 
@@ -129,15 +129,7 @@ The stack automatically initializes the database and creates an S3 bucket.
 
 You are now able to log in with via ORCID and upload data, but you will not have access to any analysis functionality yet.
 
-When running the first time or each time when the static files have changed, run
-
-.. code-block::
-
-    docker compose run --rm django python manage.py collectstatic
-
-to update the static files.
-
-Also, when running the first time, in order to see the analysis function
+When running the first time, in order to see the analysis function
 from the plugins make sure that you've added an organization :code:`World`, which
 is linked to the group :code:`all` and add permissions for all commonly available plugins:
 
@@ -185,12 +177,22 @@ When requirements in submodules change, update
 and running :code:`make` from within :code:`requirements`.
 
 Plugins with private dependencies may require access tokens provided
-in environment variables during this process. These secret tokens 
+in environment variables during this process. These secret tokens
 will be embedded as *clear text* in :code:`requirements/development.txt`.
 Thus, do not commit this requirements file.
 
 Make sure all submodules point to the head of the respective branch
 you want to use in your development stack.
+
+Testing (in PyCharm)
+--------------------
+
+To configure tests in PyCharm, please consider the following:
+
+* In `File->Settings->Docker->Tools` enable Docker Compose V2
+* Create a new interpreter `On Docker Compose...` that runs within the compose configuration
+* Create a new `pytest` configuration that runs within this interpreter. Add
+  `DJANGO_SETTINGS_MODULE=config.settings.test` to the environment.
 
 Funding
 -------

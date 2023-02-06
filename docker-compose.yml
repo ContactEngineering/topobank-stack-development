@@ -31,11 +31,10 @@ services:
       - postgres
       - mailhog
       - redis
+      - minio
+      - minio-create-buckets
     volumes:
-      - ./topobank:/app-topobank
-      - ./topobank-statistics:/plugin-topobank-statistics
-      - ./topobank-contact:/plugin-topobank-contact
-      - ./topobank-ml:/plugin-topobank-ml
+      - .:/development-stack
       - exchange_data:/tmp/exchange
     env_file:
       - ./.envs/.django
@@ -44,7 +43,7 @@ services:
       - "8000:8000"
     networks:
       - topobank_net
-    command: /start
+    command: /scripts/start-gunicorn.sh
 
   postgres:
     build:
@@ -76,22 +75,14 @@ services:
   celeryworker:
     <<: *django
     image: topobank_development_celeryworker
-    depends_on:
-      - postgres
-      - redis
-      - mailhog
     ports: [] # overwrites ports from django entry
-    command: /start-celeryworker
+    command: /scripts/start-celeryworker.sh
 
   celerybeat:
     <<: *django
     image: topobank_development_celerybeat
-    depends_on:
-      - postgres
-      - redis
-      - mailhog
     ports: [] # overwrites ports from django entry
-    command: /start-celerybeat
+    command: /scripts/start-celerybeat.sh
 
   #
   # use can this built-in S3 server for development if you don't have an external one

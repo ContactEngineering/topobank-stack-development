@@ -46,25 +46,8 @@ RUN pip install --upgrade setuptools
 RUN --mount=type=cache,target=/root/.cache --mount=type=secret,id=development_txt pip install -r /run/secrets/development_txt --ignore-installed
 
 # Here the entrypoint from production settings is taken!
-COPY ./compose/django/entrypoint /entrypoint
-RUN sed -i 's/\r//' /entrypoint
-RUN chmod +x /entrypoint
-
-COPY ./compose/django/start /start
-RUN sed -i 's/\r//' /start
-RUN chmod +x /start
-
-COPY ./compose/django/celery/worker/start /start-celeryworker
-RUN sed -i 's/\r//' /start-celeryworker
-RUN chmod +x /start-celeryworker
-
-COPY ./compose/django/celery/beat/start /start-celerybeat
-RUN sed -i 's/\r//' /start-celerybeat
-RUN chmod +x /start-celerybeat
-
-# COPY ./compose/django/celery/flower/start /start-flower
-# RUN sed -i 's/\r//' /start-flower
-# RUN chmod +x /start-flower
+COPY ./compose/django/scripts /scripts
+RUN chmod +x /scripts/*.sh
 
 RUN addgroup django --gid ${GROUP_ID} \
     && adduser --ingroup django --uid ${USER_ID} --gecos "" --disabled-password django
@@ -76,8 +59,8 @@ RUN addgroup django --gid ${GROUP_ID} \
 #
 # Finalize..
 #
-WORKDIR /app-topobank
+WORKDIR /development-stack/topobank
 
 USER django
 
-ENTRYPOINT ["/entrypoint"]
+ENTRYPOINT ["/scripts/entrypoint.sh"]

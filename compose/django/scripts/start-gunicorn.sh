@@ -6,8 +6,8 @@ set -o nounset
 
 echo "-> Installing plugins.."
 for plugin in ${TOPOBANK_PLUGINS}; do
-   echo "* ${plugin}"
-   pip install --no-deps -e /plugin-${plugin}
+  echo "* ${plugin}"
+  pip install -e /development-stack/${plugin}
 done
 
 echo "-> Running database migrations.."
