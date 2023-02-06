@@ -1,4 +1,8 @@
-version: '3'
+version: '3.8'
+
+secrets:
+  development_txt:
+    file: ./requirements/development.txt
 
 volumes:
   local_postgres_data: {}
@@ -19,6 +23,8 @@ services:
       args:
         USER_ID: ${TOPOBANK_UID:-0}
         GROUP_ID: ${TOPOBANK_GID:-0}
+      secrets:
+        - development_txt
     shm_size: '2gb'
     image: topobank_development_django
     depends_on:
