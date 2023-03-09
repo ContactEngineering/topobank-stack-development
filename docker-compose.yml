@@ -49,7 +49,7 @@ services:
     image: node
     volumes:
       - .:/development-stack
-    command: bash -c 'cd /development-stack/topobank ; npm install ; npm run dev'
+    command: bash -c 'cd /development-stack ; npm install ; npm run dev'
 
   postgres:
     build:
