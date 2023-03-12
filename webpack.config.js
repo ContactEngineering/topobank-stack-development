@@ -8,7 +8,7 @@ module.exports = {
         select: 'topobank/manager/select.js',
         dzi: 'topobank/manager/dzi.js',
         series_card: 'topobank/analysis/series_card.js',
-        roughness_parameters_card: 'topobank_statistics/analysis/roughness_parameters_card.js'
+        roughness_parameters_card: 'topobank_statistics/roughness_parameters_card.js'
     },
     output: {
         path: path.resolve(__dirname, 'topobank/topobank/static/js'),
