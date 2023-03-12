@@ -20,6 +20,7 @@
     "@bokeh/slickgrid": "^2.4.4102",
     "bootstrap": "^5.2.3",
     "choices.js": "^10.2.0",
+    "datatables.net-bs4": "^1.13.4",
     "datatables.net-vue3": "^2.1.0",
     "flatbush": "^4.0.0",
     "flatpickr": "^4.6.13",
