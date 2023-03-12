@@ -1,5 +1,6 @@
-const webpack = require('webpack');
 const path = require('path');
+const webpack = require('webpack');
+const {ModuleFederationPlugin} = require('webpack').container;
 const {VueLoaderPlugin} = require('vue-loader');
 
 module.exports = {
@@ -54,6 +55,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new ModuleFederationPlugin({
+            shared: {
+                vue: {singleton: true, eager: true}
+            }
+        })
     ]
 };
