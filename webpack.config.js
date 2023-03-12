@@ -4,11 +4,15 @@ const {VueLoaderPlugin} = require('vue-loader');
 
 module.exports = {
     entry: {
-        base: 'topobank/manager/base.js',
-        select: 'topobank/manager/select.js',
-        dzi: 'topobank/manager/dzi.js',
-        series_card: 'topobank/analysis/series_card.js',
-        roughness_parameters_card: 'topobank_statistics/roughness_parameters_card.js'
+        main: 'topobank/manager/main.js',
+        series_card: {
+            import: 'topobank/analysis/series_card.js',
+            dependOn: 'main'
+        },
+        roughness_parameters_card: {
+            import: 'topobank_statistics/roughness_parameters_card.js',
+            dependOn: 'main'
+        }
     },
     output: {
         path: path.resolve(__dirname, 'topobank/topobank/static/js'),
