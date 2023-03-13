@@ -56,6 +56,8 @@ RUN addgroup django --gid ${GROUP_ID} \
 #
 # TODO check, can we use --disabled-login ??
 
+RUN chown -R django.django /scripts
+
 #
 # Finalize..
 #
