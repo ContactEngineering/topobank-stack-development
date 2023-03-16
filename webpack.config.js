@@ -13,6 +13,10 @@ module.exports = {
         roughness_parameters_card: {
             import: 'topobank_statistics/roughness_parameters_card.js',
             dependOn: 'main'
+        },
+        contact_mechanics_card: {
+            import: 'topobank_contact/contact_mechanics_card.js',
+            dependOn: 'main'
         }
     },
     output: {
