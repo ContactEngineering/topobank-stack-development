@@ -62,6 +62,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new ModuleFederationPlugin({
             shared: {
+                bootstrap: {singleton: true, eager: true},
                 vue: {singleton: true, eager: true}
             }
         })
