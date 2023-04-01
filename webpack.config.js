@@ -5,18 +5,18 @@ const {VueLoaderPlugin} = require('vue-loader');
 
 module.exports = {
     entry: {
-        main: 'topobank/manager/main.js',
+        base: 'topobank/manager/base.js',
         series_card: {
             import: 'topobank/analysis/series_card.js',
-            dependOn: 'main'
+            dependOn: 'base'
         },
         roughness_parameters_card: {
             import: 'topobank_statistics/roughness_parameters_card.js',
-            dependOn: 'main'
+            dependOn: 'base'
         },
         contact_mechanics_card: {
             import: 'topobank_contact/contact_mechanics_card.js',
-            dependOn: 'main'
+            dependOn: 'base'
         }
     },
     output: {
@@ -55,6 +55,7 @@ module.exports = {
         },
         extensions: [
             '.js',
+            '.scss',
             '.vue'
         ]
     },
@@ -62,7 +63,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new ModuleFederationPlugin({
             shared: {
-                bokehjs: {singleton: true, eager: true},
+                '@bokeh/bokehjs': {singleton: true, eager: true},
                 bootstrap: {singleton: true, eager: true},
                 jquery: {singleton: true, eager: true},
                 vue: {singleton: true, eager: true}
