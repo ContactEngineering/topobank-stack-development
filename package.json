@@ -14,10 +14,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@bokeh/bokehjs": "^3.1.0",
+    "@bokeh/bokehjs": "^3.0.3",
     "@bokeh/numbro": "^1.6.2",
     "@bokeh/slickgrid": "^2.4.4102",
     "bootstrap": "^4.6.2",
+    "bootstrap-vue": "^2.23.1",
     "choices.js": "^10.2.0",
     "datatables.net-bs4": "^1.13.4",
     "datatables.net-vue3": "^2.1.0",
