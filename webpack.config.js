@@ -20,7 +20,7 @@ module.exports = {
         }
     },
     output: {
-        path: path.resolve(__dirname, 'topobank/topobank/static/js'),
+        path: path.resolve(__dirname, 'static/js'),
         filename: '[name].bundle.js',
         library: ['topobank', '[name]']
     },
@@ -38,7 +38,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/,
                 use: [
                     'vue-style-loader',
                     'css-loader',
@@ -62,7 +62,9 @@ module.exports = {
         new VueLoaderPlugin(),
         new ModuleFederationPlugin({
             shared: {
+                bokehjs: {singleton: true, eager: true},
                 bootstrap: {singleton: true, eager: true},
+                jquery: {singleton: true, eager: true},
                 vue: {singleton: true, eager: true}
             }
         })
