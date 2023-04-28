@@ -46,6 +46,18 @@ instead of
 
     git@github.com:ContactEngineering/TopoBank.git
 
+and run
+
+    git submodule sync --recursive
+
+afterwards.
+
+After initializing and updating the submodules, use
+
+     git submodule foreach git pull origin main
+
+to pull all current main branches from remote.
+
 Configuring
 -----------
 
