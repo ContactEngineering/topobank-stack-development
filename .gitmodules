@@ -9,8 +9,3 @@
 [submodule "topobank-contact"]
 	path = topobank-contact
 	url = git@github.com:ContactEngineering/topobank-contact.git
-	branch = main
-[submodule "topobank-ml"]
-	path = topobank-ml
-	url = git@github.com:ContactEngineering/topobank-ml.git
-	branch = main
