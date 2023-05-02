@@ -184,6 +184,13 @@ Thus, do not commit this requirements file.
 Make sure all submodules point to the head of the respective branch
 you want to use in your development stack.
 
+Running a shell
+---------------
+
+.. code-block::
+
+    docker compose run --rm django python manage.py shell
+
 Testing (in PyCharm)
 --------------------
 
