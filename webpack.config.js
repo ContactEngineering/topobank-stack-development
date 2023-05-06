@@ -9,18 +9,6 @@ module.exports = {
         analysis_app: {
             import: 'topobank/analysis/analysis_app.js',
             dependOn: 'base'
-        },
-        series_card: {
-            import: 'topobank/analysis/series_card.js',
-            dependOn: 'base'
-        },
-        roughness_parameters_card: {
-            import: 'topobank_statistics/roughness_parameters_card.js',
-            dependOn: 'base'
-        },
-        contact_mechanics_card: {
-            import: 'topobank_contact/contact_mechanics_card.js',
-            dependOn: 'base'
         }
     },
     output: {
