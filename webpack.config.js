@@ -6,6 +6,10 @@ const {VueLoaderPlugin} = require('vue-loader');
 module.exports = {
     entry: {
         base: 'topobank/manager/base.js',
+        analysis_app: {
+            import: 'topobank/analysis/analysis_app.js',
+            dependOn: 'base'
+        },
         series_card: {
             import: 'topobank/analysis/series_card.js',
             dependOn: 'base'
