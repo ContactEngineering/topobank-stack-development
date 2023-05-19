@@ -45,6 +45,12 @@ services:
       - topobank_net
     command: /scripts/start-gunicorn.sh
 
+  webpack:
+    image: node
+    volumes:
+      - .:/development-stack
+    command: bash -c 'cd /development-stack ; npm install ; npm run dev'
+
   postgres:
     build:
       context: .

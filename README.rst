@@ -184,6 +184,13 @@ Thus, do not commit this requirements file.
 Make sure all submodules point to the head of the respective branch
 you want to use in your development stack.
 
+Running a shell
+---------------
+
+.. code-block::
+
+    docker compose run --rm django python manage.py shell
+
 Testing (in PyCharm)
 --------------------
 
@@ -193,6 +200,28 @@ To configure tests in PyCharm, please consider the following:
 * Create a new interpreter `On Docker Compose...` that runs within the compose configuration
 * Create a new `pytest` configuration that runs within this interpreter. Add
   `DJANGO_SETTINGS_MODULE=config.settings.test` to the environment.
+* For testing plugins, also add `PYTHONPATH=/development-stack/topobank` to the environment.
+
+Import a database dump
+----------------------
+
+Copy the database dump file to the `/backups` location in the PostgreSQL container:
+
+.. code-block::
+
+    docker cp file.sql container:/backups
+
+Open a shell in the PostgreSQL container:
+
+.. code-block::
+
+    docker compose run --rm postgres /bin/bash
+
+Run the import:
+
+.. code-block::
+
+    PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER --dbname $POSTGRES_DB
 
 Funding
 -------

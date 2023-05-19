@@ -1,0 +1,56 @@
+{
+  "name": "topobank",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "webpack --mode development --devtool inline-source-map --watch",
+    "build-dev": "webpack --mode development",
+    "build-prod": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@bokeh/bokehjs": "^3.0.3",
+    "@bokeh/numbro": "^1.6.2",
+    "@bokeh/slickgrid": "^2.4.4102",
+    "bootstrap": "^4.6.2",
+    "bootstrap-vue": "^2.23.1",
+    "choices.js": "^10.2.0",
+    "datatables.net-bs4": "^1.13.4",
+    "datatables.net-vue3": "^2.1.0",
+    "flatbush": "^4.0.0",
+    "flatpickr": "^4.6.13",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.6.4",
+    "jquery.fancytree": "^2.38.3",
+    "mathjax-full": "^3.2.2",
+    "nouislider": "^15.7.0",
+    "openseadragon": "^4.0.0",
+    "popper.js": "^1.16.1",
+    "proj4": "^2.9.0",
+    "regl": "^2.1.0",
+    "sprintf-js": "^1.1.2",
+    "timezone": "^1.0.23",
+    "underscore.template": "^0.1.7",
+    "uuid": "^9.0.0",
+    "vue": "^3.2.47",
+    "vue-cookies": "^1.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.2.1",
+    "vue-loader": "^17.0.1",
+    "vue-style-loader": "^4.1.3",
+    "vue-template-compiler": "^2.7.14",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
+  }
+}
