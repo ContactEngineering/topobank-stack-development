@@ -41,6 +41,7 @@ module.exports = {
     },
     resolve: {
         alias: {
+            config: path.resolve(__dirname, 'config'),
             topobank: path.resolve(__dirname, 'topobank/topobank/frontend'),
             topobank_statistics: path.resolve(__dirname, 'topobank-statistics/topobank_statistics/frontend'),
             topobank_contact: path.resolve(__dirname, 'topobank-contact/topobank_contact/frontend')
