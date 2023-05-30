@@ -17,6 +17,7 @@
     "@bokeh/bokehjs": "^3.0.3",
     "@bokeh/numbro": "^1.6.2",
     "@bokeh/slickgrid": "^2.4.4102",
+    "@vuepic/vue-datepicker": "^5.1.2",
     "bootstrap": "^4.6.2",
     "bootstrap-vue": "^2.23.1",
     "choices.js": "^10.2.0",

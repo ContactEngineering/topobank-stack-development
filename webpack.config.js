@@ -9,6 +9,10 @@ module.exports = {
         analysis_app: {
             import: 'topobank/analysis/analysis_app.js',
             dependOn: 'base'
+        },
+        surface_detail_app: {
+            import: 'topobank/manager/surface_detail_app.js',
+            dependOn: 'base'
         }
     },
     output: {
