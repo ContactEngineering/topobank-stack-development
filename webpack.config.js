@@ -63,7 +63,7 @@ module.exports = {
                 '@bokeh/bokehjs': {singleton: true, eager: true, requiredVersion: '3.0.3'},
                 bootstrap: {singleton: true, eager: true},
                 jquery: {singleton: true, eager: true},
-                vue: {singleton: true, eager: true, requiredVersion: '3.2.47'}
+                vue: {singleton: true, eager: true, requiredVersion: '3.3.4'}
             }
         })
     ]

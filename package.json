@@ -18,10 +18,10 @@
     "@bokeh/numbro": "^1.6.2",
     "@bokeh/slickgrid": "^2.4.4102",
     "@vuepic/vue-datepicker": "^5.1.2",
-    "bootstrap": "^4.6.2",
-    "bootstrap-vue": "^2.23.1",
+    "bootstrap": "^5.3.0",
+    "bootstrap-vue-next": "^0.9.4",
     "choices.js": "^10.2.0",
-    "datatables.net-bs4": "^1.13.4",
+    "datatables.net-bs5": "^1.13.4",
     "datatables.net-vue3": "^2.1.0",
     "flatbush": "^4.0.0",
     "flatpickr": "^4.6.13",
@@ -38,7 +38,7 @@
     "timezone": "^1.0.23",
     "underscore.template": "^0.1.7",
     "uuid": "^9.0.0",
-    "vue": "^3.2.47",
+    "vue": "^3.3.4",
     "vue-cookies": "^1.8.3"
   },
   "devDependencies": {
