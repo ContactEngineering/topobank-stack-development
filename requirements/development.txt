@@ -48,8 +48,6 @@ build==0.10.0
     # via pip-tools
 celery[redis]==5.2.7
     # via topobank (../topobank/setup.py)
-celery-progress==0.3
-    # via topobank (../topobank/setup.py)
 certifi==2023.5.7
     # via
     #   requests
@@ -208,7 +206,6 @@ et-xmlfile==1.1.0
     # via openpyxl
 exceptiongroup==1.1.1
     # via
-    #   pytest
     #   trio
     #   trio-websocket
 executing==1.2.0
@@ -377,7 +374,9 @@ pillow==9.5.0
     #   surfacetopography
     #   topobank (../topobank/setup.py)
 pint==0.21
-    # via topobank (../topobank/setup.py)
+    # via
+    #   topobank (../topobank/setup.py)
+    #   topobank-statistics (../topobank-statistics/setup.py)
 pip-tools==6.13.0
     # via topobank (../topobank/setup.py)
 pluggy==1.0.0
