@@ -172,7 +172,7 @@ django-model-utils==4.3.1
     # via
     #   django-notifications-hq
     #   topobank (../topobank/setup.py)
-django-notifications-hq==1.8.2
+django-notifications-hq==1.7.0
     # via topobank (../topobank/setup.py)
 django-progressbarupload @ git+http://github.com/ContactEngineering/django-progressbarupload.git
     # via topobank (../topobank/setup.py)
