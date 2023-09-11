@@ -74,8 +74,6 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.3.0
     # via celery
-codetiming==1.4.0
-    # via topobank (../topobank/setup.py)
 collectfast==2.2.0
     # via topobank (../topobank/setup.py)
 contactmechanics==1.1.1
@@ -585,7 +583,7 @@ sqlparse==0.4.4
     #   topobank (../topobank/setup.py)
 stack-data==0.6.2
     # via ipython
-surfacetopography==1.10.0
+surfacetopography==1.11.0
     # via
     #   contactmechanics
     #   topobank (../topobank/setup.py)
