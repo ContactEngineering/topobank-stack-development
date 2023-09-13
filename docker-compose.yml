@@ -138,7 +138,7 @@ services:
     entrypoint: >
         /bin/sh -c "
         /usr/bin/mc config host add minio http://minio:9000 admin secret12;
-        /usr/bin/mc mb minio/topobank-dev;
-        /usr/bin/mc policy set public minio/topobank-dev;
+        /usr/bin/mc mb --ignore-existing minio/topobank-dev;
+        /usr/bin/mc anonymous set public minio/topobank-dev;
         exit 0;
         "
