@@ -78,7 +78,7 @@ for the following purposes:
 - get a client API + secret in order to be able to authenticate against orcid.org
 - set a redirect URL to which Topobank will redirect after successful authentication
 
-See `here <https://support.orcid.org/hc/en-us/articles/360006897174>`_ for more information
+See `here <https://info.orcid.org/documentation/integration-guide/registering-a-public-api-client/>`_ for more information
 how to do it.
 As redirect URL add all of these
 
