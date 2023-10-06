@@ -116,6 +116,8 @@ and fill in these two numbers, so you don't have to prefix the :code:`docker com
 You can find the ids by calling the :code:`id` command on Linux, this will return the :code:`uid` and possible
 :code:`gid` values.
 
+**Important**: If you have VPN active, this may shadow the Docker mirror sites and break the build process (because the images cannot be pulled).
+
 Running (locally)
 -----------------
 
