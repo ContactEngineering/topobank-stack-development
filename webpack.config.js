@@ -28,14 +28,16 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',
                     'css-loader'
-                ]
+                ],
+                exclude: /node_modules/,
             },
             {
                 test: /\.s[ac]ss$/,
@@ -43,7 +45,8 @@ module.exports = {
                     'vue-style-loader',
                     'css-loader',
                     'sass-loader'
-                ]
+                ],
+                exclude: /node_modules/,
             }
         ]
     },
@@ -56,6 +59,7 @@ module.exports = {
         },
         extensions: [
             '.js',
+            '.ts',
             '.scss',
             '.vue'
         ]
