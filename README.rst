@@ -69,7 +69,7 @@ By default the DOI generation is skipped.
 
 The rest of the settings should be fine as default for development.
 
-Register a Public API Client
+Register a public API client
 ............................
 
 You need to register a public API client on the ORCID website
@@ -222,6 +222,12 @@ Run the import:
 .. code-block::
 
     PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER --dbname $POSTGRES_DB
+
+Mock publishing
+---------------
+
+The web app includes functionality for publishing datasets, which means registering a DOI for those. The true DOI
+registration only works in the production environment.
 
 Funding
 -------
