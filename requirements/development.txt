@@ -8,8 +8,6 @@ alabaster==0.7.13
     # via sphinx
 amqp==5.1.1
     # via kombu
-annotated-types==0.6.0
-    # via pydantic
 appnope==0.1.3
     # via ipython
 argon2-cffi==23.1.0
@@ -76,8 +74,6 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.3.0
     # via celery
-collectfast==2.2.0
-    # via topobank (../topobank/pyproject.toml)
 contactmechanics==1.1.1
     # via
     #   topobank (../topobank/pyproject.toml)
@@ -91,7 +87,7 @@ coverage[toml]==7.3.2
     #   django-coverage-plugin
     #   pytest-cov
     #   topobank (../topobank/pyproject.toml)
-crispy-bootstrap4==2022.1
+crispy-bootstrap5==0.7
     # via topobank (../topobank/pyproject.toml)
 cryptography==41.0.4
     # via
@@ -116,18 +112,13 @@ dj-inmemorystorage==2.1.0
     # via topobank (../topobank/pyproject.toml)
 django==3.2.18
     # via
-    #   collectfast
-    #   crispy-bootstrap4
+    #   crispy-bootstrap5
     #   dj-inmemorystorage
     #   django-allauth
     #   django-appconf
-    #   django-bootstrap-datepicker-plus
     #   django-crispy-forms
     #   django-debug-toolbar
     #   django-extensions
-    #   django-filter
-    #   django-formtools
-    #   django-fullurl
     #   django-guardian
     #   django-model-utils
     #   django-notifications-hq
@@ -147,13 +138,11 @@ django-allauth==0.54.0
     # via topobank (../topobank/pyproject.toml)
 django-appconf==1.0.5
     # via django-select2
-django-bootstrap-datepicker-plus==5.0.4
-    # via topobank (../topobank/pyproject.toml)
 django-coverage-plugin==3.1.0
     # via topobank (../topobank/pyproject.toml)
 django-crispy-forms==2.0
     # via
-    #   crispy-bootstrap4
+    #   crispy-bootstrap5
     #   topobank (../topobank/pyproject.toml)
 django-debug-toolbar==4.2.0
     # via topobank (../topobank/pyproject.toml)
@@ -161,21 +150,11 @@ django-environ==0.11.2
     # via topobank (../topobank/pyproject.toml)
 django-extensions==3.2.3
     # via topobank (../topobank/pyproject.toml)
-django-filter==23.3
-    # via topobank (../topobank/pyproject.toml)
-django-formtools==2.4.1
-    # via topobank (../topobank/pyproject.toml)
-django-fullurl==1.4
-    # via topobank (../topobank/pyproject.toml)
 django-guardian==2.4.0
     # via topobank (../topobank/pyproject.toml)
 django-model-utils==4.3.1
-    # via
-    #   django-notifications-hq
-    #   topobank (../topobank/pyproject.toml)
+    # via django-notifications-hq
 django-notifications-hq==1.7.0
-    # via topobank (../topobank/pyproject.toml)
-django-progressbarupload @ git+http://github.com/ContactEngineering/django-progressbarupload.git
     # via topobank (../topobank/pyproject.toml)
 django-redis==5.4.0
     # via topobank (../topobank/pyproject.toml)
@@ -184,9 +163,7 @@ django-request-profiler==1.0
 django-select2==8.1.2
     # via topobank (../topobank/pyproject.toml)
 django-storages==1.14.2
-    # via
-    #   collectfast
-    #   topobank (../topobank/pyproject.toml)
+    # via topobank (../topobank/pyproject.toml)
 django-tagulous==1.3.3
     # via topobank (../topobank/pyproject.toml)
 django-termsandconditions==2.0.12
@@ -198,9 +175,7 @@ django-trackstats==0.7.0
 django-watchman==1.3.0
     # via topobank (../topobank/pyproject.toml)
 djangorestframework==3.14.0
-    # via
-    #   rest-framework-generic-relations
-    #   topobank (../topobank/pyproject.toml)
+    # via topobank (../topobank/pyproject.toml)
 docutils==0.18.1
     # via
     #   sphinx
@@ -214,8 +189,6 @@ factory-boy==3.3.0
 faker==19.10.0
     # via factory-boy
 flake8==6.1.0
-    # via topobank (../topobank/pyproject.toml)
-fontawesomefree==5.15.4
     # via topobank (../topobank/pyproject.toml)
 fonttools==4.43.1
     # via matplotlib
@@ -337,7 +310,6 @@ numpy==1.23.5
     #   scipy
     #   surfacetopography
     #   tifffile
-    #   topobank (../topobank/pyproject.toml)
     #   uvw
     #   xarray
 numpyencoder==0.3.0
@@ -404,10 +376,6 @@ pycodestyle==2.11.1
     # via flake8
 pycparser==2.21
     # via cffi
-pydantic==2.4.2
-    # via django-bootstrap-datepicker-plus
-pydantic-core==2.10.1
-    # via pydantic
 pyflakes==3.1.0
     # via flake8
 pygments==2.16.1
@@ -506,8 +474,6 @@ requests==2.31.0
     #   surfacetopography
 requests-oauthlib==1.3.1
     # via django-allauth
-rest-framework-generic-relations==2.1.0
-    # via topobank (../topobank/pyproject.toml)
 rich==13.6.0
     # via meshio
 rpds-py==0.10.6
@@ -612,11 +578,7 @@ trio-websocket==0.11.1
     # via selenium
 typing-extensions==4.8.0
     # via
-    #   collectfast
-    #   django-bootstrap-datepicker-plus
     #   pint
-    #   pydantic
-    #   pydantic-core
     #   setuptools-scm
 tzdata==2023.3
     # via
