@@ -193,9 +193,25 @@ Running a shell
 
     docker compose run --rm django python manage.py shell
 
-Testing (in PyCharm)
---------------------
+Testing
+-------
 
+Command line
+............
+
+Tests can be run directly in the docker container. Since tests require the database and the S3
+storage, the easiest solution is to run them with `docker compose`:
+
+.. code-block::
+
+    docker compose run --rm django pytest
+
+Splinter and browser tests are currently broken. You may want to ignore those by adding
+`--ignore=splinter_tests --ignore=browser_tests` as arguments to `pytest`.
+
+PyCharm
+.......
+ 
 To configure tests in PyCharm, please consider the following:
 
 * In `File->Settings->Docker->Tools` enable Docker Compose V2
