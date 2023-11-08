@@ -9,6 +9,14 @@ module.exports = {
         analysis_app: {
             import: 'topobank/analysis/analysis_app.js',
             dependOn: 'base'
+        },
+        surface_detail_app: {
+            import: 'topobank/manager/surface_detail_app.js',
+            dependOn: 'base'
+        },
+        topography_detail_app: {
+            import: 'topobank/manager/topography_detail_app.js',
+            dependOn: 'base'
         }
     },
     output: {
@@ -20,14 +28,16 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',
                     'css-loader'
-                ]
+                ],
+                exclude: /node_modules/,
             },
             {
                 test: /\.s[ac]ss$/,
@@ -35,7 +45,8 @@ module.exports = {
                     'vue-style-loader',
                     'css-loader',
                     'sass-loader'
-                ]
+                ],
+                exclude: /node_modules/,
             }
         ]
     },
@@ -48,6 +59,7 @@ module.exports = {
         },
         extensions: [
             '.js',
+            '.ts',
             '.scss',
             '.vue'
         ]
@@ -56,10 +68,10 @@ module.exports = {
         new VueLoaderPlugin(),
         new ModuleFederationPlugin({
             shared: {
-                '@bokeh/bokehjs': {singleton: true, eager: true, requiredVersion: '3.0.3'},
+                '@bokeh/bokehjs': {singleton: true, eager: true},
                 bootstrap: {singleton: true, eager: true},
                 jquery: {singleton: true, eager: true},
-                vue: {singleton: true, eager: true, requiredVersion: '3.2.47'}
+                vue: {singleton: true, eager: true}
             }
         })
     ]
