@@ -34,8 +34,6 @@ billiard==4.1.0
     # via celery
 bleach==6.1.0
     # via topobank (../topobank/pyproject.toml)
-bokeh==3.0.3
-    # via topobank (../topobank/pyproject.toml)
 boto3==1.28.64
     # via topobank (../topobank/pyproject.toml)
 botocore==1.31.64
@@ -77,9 +75,7 @@ contactmechanics==1.1.1
     #   topobank (../topobank/pyproject.toml)
     #   topobank-contact (../topobank-contact/pyproject.toml)
 contourpy==1.1.1
-    # via
-    #   bokeh
-    #   matplotlib
+    # via matplotlib
 coverage[toml]==7.3.2
     # via
     #   django-coverage-plugin
@@ -235,7 +231,6 @@ jedi==0.19.1
     # via ipython
 jinja2==3.1.2
     # via
-    #   bokeh
     #   pytest-html
     #   sphinx
     #   topobank (../topobank/pyproject.toml)
@@ -291,7 +286,6 @@ numpi==0.3.1
     #   surfacetopography
 numpy==1.23.5
     # via
-    #   bokeh
     #   cftime
     #   contactmechanics
     #   contourpy
@@ -320,7 +314,6 @@ outcome==1.2.0
     # via trio
 packaging==23.2
     # via
-    #   bokeh
     #   build
     #   gunicorn
     #   h5netcdf
@@ -332,7 +325,6 @@ packaging==23.2
     #   xarray
 pandas==2.1.1
     # via
-    #   bokeh
     #   surfacetopography
     #   topobank (../topobank/pyproject.toml)
     #   xarray
@@ -344,7 +336,6 @@ pickleshare==0.7.5
     # via ipython
 pillow==10.1.0
     # via
-    #   bokeh
     #   matplotlib
     #   surfacetopography
     #   topobank (../topobank/pyproject.toml)
@@ -448,7 +439,6 @@ pytz==2023.3.post1
     #   pandas
 pyyaml==6.0.1
     # via
-    #   bokeh
     #   surfacetopography
     #   topobank (../topobank/pyproject.toml)
 redis==4.6.0
@@ -544,7 +534,7 @@ sqlparse==0.4.4
     #   topobank (../topobank/pyproject.toml)
 stack-data==0.6.3
     # via ipython
-surfacetopography==1.11.3
+surfacetopography==1.12.1
     # via
     #   contactmechanics
     #   topobank (../topobank/pyproject.toml)
@@ -560,8 +550,6 @@ tifffile==2023.9.26
     # via tiffile
 tiffile==2018.10.18
     # via surfacetopography
-tornado==6.3.3
-    # via bokeh
 traitlets==5.11.2
     # via
     #   ipython
@@ -611,8 +599,6 @@ xarray==2023.9.0
     # via topobank (../topobank/pyproject.toml)
 xmltodict==0.13.0
     # via surfacetopography
-xyzservices==2023.10.0
-    # via bokeh
 zope-event==5.0
     # via gevent
 zope-interface==6.1
