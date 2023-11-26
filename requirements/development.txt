@@ -6,17 +6,15 @@
 #
 alabaster==0.7.13
     # via sphinx
-amqp==5.1.1
+amqp==5.2.0
     # via kombu
-appnope==0.1.3
-    # via ipython
 argon2-cffi==23.1.0
     # via topobank (../topobank/pyproject.toml)
 argon2-cffi-bindings==21.2.0
     # via argon2-cffi
 asgiref==3.7.2
     # via django
-asttokens==2.4.0
+asttokens==2.4.1
     # via stack-data
 attrs==23.1.0
     # via
@@ -24,27 +22,25 @@ attrs==23.1.0
     #   outcome
     #   referencing
     #   trio
-babel==2.13.0
+babel==2.13.1
     # via sphinx
-backcall==0.2.0
-    # via ipython
 beautifulsoup4==4.12.2
     # via topobank (../topobank/pyproject.toml)
-billiard==4.1.0
+billiard==4.2.0
     # via celery
 bleach==6.1.0
     # via topobank (../topobank/pyproject.toml)
-boto3==1.28.64
+boto3==1.29.6
     # via topobank (../topobank/pyproject.toml)
-botocore==1.31.64
+botocore==1.32.6
     # via
     #   boto3
     #   s3transfer
 build==1.0.3
     # via pip-tools
-celery[redis]==5.3.4
+celery[redis]==5.3.6
     # via topobank (../topobank/pyproject.toml)
-certifi==2023.7.22
+certifi==2023.11.17
     # via
     #   netcdf4
     #   requests
@@ -53,9 +49,9 @@ cffi==1.16.0
     # via
     #   argon2-cffi-bindings
     #   cryptography
-cftime==1.6.2
+cftime==1.6.3
     # via netcdf4
-charset-normalizer==3.3.0
+charset-normalizer==3.3.2
     # via requests
 click==8.1.7
     # via
@@ -74,16 +70,16 @@ contactmechanics==1.1.1
     # via
     #   topobank (../topobank/pyproject.toml)
     #   topobank-contact (../topobank-contact/pyproject.toml)
-contourpy==1.1.1
+contourpy==1.2.0
     # via matplotlib
 coverage[toml]==7.3.2
     # via
     #   django-coverage-plugin
     #   pytest-cov
     #   topobank (../topobank/pyproject.toml)
-crispy-bootstrap5==0.7
+crispy-bootstrap5==2023.10
     # via topobank (../topobank/pyproject.toml)
-cryptography==41.0.4
+cryptography==41.0.5
     # via
     #   pyjwt
     #   pyopenssl
@@ -104,7 +100,7 @@ defusedxml==0.7.1
     #   surfacetopography
 dj-inmemorystorage==2.1.0
     # via topobank (../topobank/pyproject.toml)
-django==3.2.18
+django==4.2.7
     # via
     #   crispy-bootstrap5
     #   dj-inmemorystorage
@@ -130,11 +126,11 @@ django==3.2.18
     #   topobank (../topobank/pyproject.toml)
 django-allauth==0.54.0
     # via topobank (../topobank/pyproject.toml)
-django-appconf==1.0.5
+django-appconf==1.0.6
     # via django-select2
 django-coverage-plugin==3.1.0
     # via topobank (../topobank/pyproject.toml)
-django-crispy-forms==2.0
+django-crispy-forms==2.1
     # via
     #   crispy-bootstrap5
     #   topobank (../topobank/pyproject.toml)
@@ -152,7 +148,7 @@ django-notifications-hq==1.7.0
     # via topobank (../topobank/pyproject.toml)
 django-redis==5.4.0
     # via topobank (../topobank/pyproject.toml)
-django-request-profiler==1.0
+django-request-profiler==1.1
     # via topobank (../topobank/pyproject.toml)
 django-select2==8.1.2
     # via topobank (../topobank/pyproject.toml)
@@ -176,15 +172,15 @@ docutils==0.18.1
     #   sphinx-rtd-theme
 et-xmlfile==1.1.0
     # via openpyxl
-executing==2.0.0
+executing==2.0.1
     # via stack-data
 factory-boy==3.3.0
     # via topobank (../topobank/pyproject.toml)
-faker==19.10.0
+faker==20.1.0
     # via factory-boy
 flake8==6.1.0
     # via topobank (../topobank/pyproject.toml)
-fonttools==4.43.1
+fonttools==4.45.1
     # via matplotlib
 freezegun==1.2.2
     # via topobank (../topobank/pyproject.toml)
@@ -192,7 +188,7 @@ gevent==23.9.1
     # via
     #   gunicorn
     #   topobank (../topobank/pyproject.toml)
-greenlet==3.0.0
+greenlet==3.0.1
     # via
     #   gevent
     #   topobank (../topobank/pyproject.toml)
@@ -200,14 +196,14 @@ gunicorn[gevent]==21.2.0
     # via topobank (../topobank/pyproject.toml)
 h11==0.14.0
     # via wsproto
-h5netcdf==1.2.0
+h5netcdf==1.3.0
     # via topobank (../topobank/pyproject.toml)
 h5py==3.10.0
     # via
     #   h5netcdf
     #   muspectre
     #   surfacetopography
-idna==3.4
+idna==3.6
     # via
     #   requests
     #   trio
@@ -221,7 +217,7 @@ iniconfig==2.0.0
     # via pytest
 ipdb==0.13.13
     # via topobank (../topobank/pyproject.toml)
-ipython==8.16.1
+ipython==8.18.0
     # via
     #   ipdb
     #   topobank (../topobank/pyproject.toml)
@@ -240,13 +236,13 @@ jmespath==1.0.1
     #   botocore
 jsonfield==3.1.0
     # via django-notifications-hq
-jsonschema==4.19.1
+jsonschema==4.20.0
     # via datacite
-jsonschema-specifications==2023.7.1
+jsonschema-specifications==2023.11.1
     # via jsonschema
 kiwisolver==1.4.5
     # via matplotlib
-kombu==5.3.2
+kombu==5.3.4
     # via celery
 lxml==4.9.3
     # via
@@ -261,7 +257,7 @@ markupsafe==2.1.3
     # via
     #   jinja2
     #   werkzeug
-matplotlib==3.8.0
+matplotlib==3.8.2
     # via surfacetopography
 matplotlib-inline==0.1.6
     # via ipython
@@ -276,7 +272,7 @@ muspectre==0.26.4
     #   contactmechanics
     #   surfacetopography
     #   topobank (../topobank/pyproject.toml)
-netcdf4==1.6.4
+netcdf4==1.6.5
     # via
     #   contactmechanics
     #   topobank (../topobank/pyproject.toml)
@@ -310,7 +306,7 @@ openpyxl==3.1.2
     # via
     #   surfacetopography
     #   topobank (../topobank/pyproject.toml)
-outcome==1.2.0
+outcome==1.3.0.post0
     # via trio
 packaging==23.2
     # via
@@ -323,16 +319,14 @@ packaging==23.2
     #   setuptools-scm
     #   sphinx
     #   xarray
-pandas==2.1.1
+pandas==2.1.3
     # via
     #   surfacetopography
     #   topobank (../topobank/pyproject.toml)
     #   xarray
 parso==0.8.3
     # via jedi
-pexpect==4.8.0
-    # via ipython
-pickleshare==0.7.5
+pexpect==4.9.0
     # via ipython
 pillow==10.1.0
     # via
@@ -347,7 +341,7 @@ pip-tools==7.3.0
     # via topobank (../topobank/pyproject.toml)
 pluggy==1.3.0
     # via pytest
-prompt-toolkit==3.0.39
+prompt-toolkit==3.0.41
     # via
     #   click-repl
     #   ipython
@@ -365,7 +359,7 @@ pycparser==2.21
     # via cffi
 pyflakes==3.1.0
     # via flake8
-pygments==2.16.1
+pygments==2.17.2
     # via
     #   ipython
     #   rich
@@ -375,7 +369,7 @@ pyjwt[crypto]==2.8.0
     # via
     #   django-allauth
     #   topobank (../topobank/pyproject.toml)
-pyopenssl==23.2.0
+pyopenssl==23.3.0
     # via topobank (../topobank/pyproject.toml)
 pyparsing==3.1.1
     # via matplotlib
@@ -383,7 +377,7 @@ pyproject-hooks==1.0.0
     # via build
 pysocks==1.7.1
     # via urllib3
-pytest==7.4.2
+pytest==7.4.3
     # via
     #   pytest-base-url
     #   pytest-cov
@@ -400,15 +394,15 @@ pytest-base-url==2.0.0
     # via pytest-selenium
 pytest-cov==4.1.0
     # via topobank (../topobank/pyproject.toml)
-pytest-django==4.5.2
+pytest-django==4.7.0
     # via topobank (../topobank/pyproject.toml)
-pytest-html==4.0.2
+pytest-html==4.1.1
     # via pytest-selenium
 pytest-metadata==3.0.0
     # via pytest-html
-pytest-mock==3.11.1
+pytest-mock==3.12.0
     # via topobank (../topobank/pyproject.toml)
-pytest-selenium==4.0.1
+pytest-selenium==4.0.2
     # via topobank (../topobank/pyproject.toml)
 pytest-splinter==3.3.2
     # via topobank (../topobank/pyproject.toml)
@@ -432,7 +426,6 @@ python3-openid==3.2.0
     # via django-allauth
 pytz==2023.3.post1
     # via
-    #   django
     #   django-notifications-hq
     #   django-trackstats
     #   djangorestframework
@@ -441,11 +434,11 @@ pyyaml==6.0.1
     # via
     #   surfacetopography
     #   topobank (../topobank/pyproject.toml)
-redis==4.6.0
+redis==5.0.1
     # via
     #   celery
     #   django-redis
-referencing==0.30.2
+referencing==0.31.0
     # via
     #   jsonschema
     #   jsonschema-specifications
@@ -460,20 +453,20 @@ requests==2.31.0
     #   surfacetopography
 requests-oauthlib==1.3.1
     # via django-allauth
-rich==13.6.0
+rich==13.7.0
     # via meshio
-rpds-py==0.10.6
+rpds-py==0.13.1
     # via
     #   jsonschema
     #   referencing
 s3transfer==0.7.0
     # via boto3
-scipy==1.11.3
+scipy==1.11.4
     # via
     #   contactmechanics
     #   muspectre
     #   surfacetopography
-selenium==4.14.0
+selenium==4.15.2
     # via
     #   pytest-selenium
     #   pytest-splinter
@@ -523,7 +516,7 @@ sphinxcontrib-qthelp==1.0.6
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.9
     # via sphinx
-splinter[django]==0.19.0
+splinter[django]==0.20.1
     # via
     #   pytest-splinter
     #   topobank (../topobank/pyproject.toml)
@@ -550,11 +543,11 @@ tifffile==2023.9.26
     # via tiffile
 tiffile==2018.10.18
     # via surfacetopography
-traitlets==5.11.2
+traitlets==5.13.0
     # via
     #   ipython
     #   matplotlib-inline
-trio==0.22.2
+trio==0.23.1
     # via
     #   selenium
     #   trio-websocket
@@ -568,7 +561,7 @@ tzdata==2023.3
     # via
     #   celery
     #   pandas
-urllib3[socks]==1.26.17
+urllib3[socks]==2.0.7
     # via
     #   botocore
     #   pytest-splinter
@@ -578,24 +571,24 @@ urllib3[socks]==1.26.17
     #   topobank (../topobank/pyproject.toml)
 uvw==0.5.2
     # via muspectre
-vine==5.0.0
+vine==5.1.0
     # via
     #   amqp
     #   celery
     #   kombu
-wcwidth==0.2.8
+wcwidth==0.2.12
     # via prompt-toolkit
 webencodings==0.5.1
     # via bleach
-werkzeug==3.0.0
+werkzeug==3.0.1
     # via topobank (../topobank/pyproject.toml)
-wheel==0.41.2
+wheel==0.41.3
     # via pip-tools
 whitenoise==5.3.0
     # via topobank (../topobank/pyproject.toml)
 wsproto==1.2.0
     # via trio-websocket
-xarray==2023.9.0
+xarray==2023.11.0
     # via topobank (../topobank/pyproject.toml)
 xmltodict==0.13.0
     # via surfacetopography
