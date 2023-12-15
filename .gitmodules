@@ -10,3 +10,6 @@
 	path = topobank-contact
 	url = git@github.com:ContactEngineering/topobank-contact.git
 	branch = main
+[submodule "topobank-publication"]
+	path = topobank-publication
+	url = git@github.com:ContactEngineering/topobank-publication.git
