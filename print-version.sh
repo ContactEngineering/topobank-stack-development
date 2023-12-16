@@ -9,3 +9,6 @@ git describe --tags
 echo "topobank-contact"
 cd ../topobank-contact
 git describe --tags
+echo "topobank-publication"
+cd ../topobank-publication
+git describe --tags
