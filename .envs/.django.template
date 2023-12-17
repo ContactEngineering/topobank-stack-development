@@ -88,4 +88,4 @@ DBBACKUP_SCHEDULE=@hourly
 # ------------------------------------------------------------------------------
 #
 # List of (optional) plugins to TopoBank.
-TOPOBANK_PLUGINS="topobank-publication topobank-statistics topobank-contact"
+TOPOBANK_PLUGINS="ce-ui topobank-publication topobank-statistics topobank-contact"
