@@ -37,6 +37,31 @@ or use a command like
 
     git clone --recurse-submodules git@github.com:ContactEngineering/topobank-stack-development.git
 
+If you need to clone without github credentials available locally,
+please modify URLs within the `.gitmodules` file to point to public addresses, e.g.
+
+    https://github.com/ContactEngineering/topobank.git
+
+instead of
+
+    git@github.com:ContactEngineering/TopoBank.git
+
+and run
+
+.. code-block::
+
+    git submodule sync --recursive
+
+afterwards.
+
+After initializing and updating the submodules, use
+
+.. code-block::
+
+     git submodule foreach git pull origin main
+
+to pull all current main branches from remote.
+
 Configuring
 -----------
 
