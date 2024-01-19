@@ -40,7 +40,6 @@ celery[redis]==5.3.6
     #   topobank (../topobank/pyproject.toml)
 certifi==2023.11.17
     # via
-    #   netcdf4
     #   requests
     #   selenium
 cffi==1.16.0
