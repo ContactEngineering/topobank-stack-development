@@ -13,3 +13,6 @@
 [submodule "topobank-publication"]
 	path = topobank-publication
 	url = git@github.com:ContactEngineering/topobank-publication.git
+[submodule "ce-ui"]
+	path = ce-ui
+	url = git@github.com:ContactEngineering/ce-ui.git
