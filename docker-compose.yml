@@ -7,7 +7,11 @@ secrets:
 volumes:
   local_postgres_data: {}
   local_postgres_data_backups: {}
-  minio_data: {}
+  minio_data:
+    driver_opts:
+      o: "size=10g"
+      device: "tmpfs"
+      type: "tmpfs"
   exchange_data: {}
 
 networks:
