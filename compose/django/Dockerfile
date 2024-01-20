@@ -45,6 +45,8 @@ RUN pip install --upgrade setuptools
 
 RUN --mount=type=cache,target=/root/.cache --mount=type=secret,id=development_txt pip install -r /run/secrets/development_txt --ignore-installed
 
+RUN pip install flower  # This is not a dependency of TopoBank, but we need it for monitoring
+
 # Here the entrypoint from production settings is taken!
 COPY ./compose/django/scripts /scripts
 RUN chmod +x /scripts/*.sh
