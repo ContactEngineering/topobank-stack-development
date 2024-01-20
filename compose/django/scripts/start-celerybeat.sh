@@ -3,7 +3,6 @@
 set -o errexit
 set -o nounset
 
-echo "-> Starting Celery beat.."
+echo "-> Starting Celery flower..."
 
-rm -f './celerybeat.pid'
-celery -A topobank.taskapp beat -l INFO
+celery -A topobank.taskapp flower

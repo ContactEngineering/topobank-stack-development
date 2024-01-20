@@ -7,11 +7,7 @@ secrets:
 volumes:
   local_postgres_data: {}
   local_postgres_data_backups: {}
-  minio_data:
-    driver_opts:
-      o: "size=10g"
-      device: "tmpfs"
-      type: "tmpfs"
+  minio_data: {}
   exchange_data: {}
 
 networks:
@@ -93,6 +89,13 @@ services:
     image: topobank_development_celerybeat
     ports: [] # overwrites ports from django entry
     command: /scripts/start-celerybeat.sh
+
+  celeryflower:
+    <<: *django
+    image: topobank_development_celeryflower
+    ports: # overwrites ports from django entry
+      - "5555:5555"
+    command: /scripts/start-celeryflower.sh
 
   #
   # use can this built-in S3 server for development if you don't have an external one
