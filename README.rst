@@ -136,9 +136,22 @@ Run the whole stack with
 
 .. code-block::
 
-   docker compose up
+   docker compose up -d
 
 The stack automatically initializes the database and creates an S3 bucket.
+
+Especially the first time, this could take a while.
+To see what is going on, you can look at the `logs` with:
+
+.. code-block::
+
+    docker compose logs -f
+
+If you only want to see the `logs` of one Service, i.e. `django`, run:
+
+.. code-block::
+
+    docker compose logs -f django
 
 You are now able to log in with via ORCID and upload data, but you will not have access to any analysis functionality yet.
 
@@ -151,7 +164,7 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
 
    .. code-block::
 
-    docker compose run --rm django python manage.py grant_admin_permissions your_username
+    docker compose exec django python manage.py grant_admin_permissions your_username
 
    You have to replace :code:`your_username` with the correct username.
    In order to find it, login with your ORCID
@@ -228,7 +241,7 @@ Open a shell in the PostgreSQL container:
 
 .. code-block::
 
-    docker compose run --rm postgres /bin/bash
+    docker compose exec postgres /bin/bash
 
 Run the import:
 
