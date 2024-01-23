@@ -9,6 +9,8 @@ The modules
 * `topobank <https://github.com/ContactEngineering/topobank>`_
 * `topobank-statistics <https://github.com/ContactEngineering/topobank-statistics>`_
 * `topobank-contact <https://github.com/ContactEngineering/topobank-contact>`_
+* `topobank-publication <https://github.com/ContactEngineering/topobank-publication>`_
+* `ce-ui <https://github.com/ContactEngineering/ce-ui>`_
 
 are included as submodules. The stack consists of
 
@@ -105,23 +107,7 @@ for the following purposes:
 
 See `here <https://info.orcid.org/documentation/integration-guide/registering-a-public-api-client/>`_ for more information
 how to do it.
-As redirect URL add all of these
-
-- for development: http://127.0.0.1:8000/accounts/orcid/login/callback
-- for development: http://localhost:8000/accounts/orcid/login/callback
-
-One of the redirect URL configured at orcid.org must exactly match the redirect URL, which is
-transferred from the TopoBank application during the login process.
-This means, if you use
-
- http://localhost:8000
-
-i.e. :code:`localhost` instead of :code:`127.0.0.1` during development, you'll need also redirect
-url with :code:`localhost` which is
-
- http://localhost:8000/accounts/orcid/login/callback
-
-If you have both :code:`localhost` and :code:`127.0.0.1`, it shoudn't matter.
+As redirect URL add `http://127.0.0.1:8000/accounts/orcid/login/callback`
 
 Compiling
 ---------
@@ -150,9 +136,22 @@ Run the whole stack with
 
 .. code-block::
 
-   docker compose up
+   docker compose up -d
 
 The stack automatically initializes the database and creates an S3 bucket.
+
+Especially the first time, this could take a while.
+To see what is going on, you can look at the `logs` with:
+
+.. code-block::
+
+    docker compose logs -f
+
+If you only want to see the `logs` of one Service, i.e. `django`, run:
+
+.. code-block::
+
+    docker compose logs -f django
 
 You are now able to log in with via ORCID and upload data, but you will not have access to any analysis functionality yet.
 
@@ -165,12 +164,12 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
 
    .. code-block::
 
-    docker compose run --rm django python manage.py grant_admin_permissions your_username
+    docker compose exec django python manage.py grant_admin_permissions your_username
 
    You have to replace :code:`your_username` with the correct username.
    In order to find it, login with your ORCID
    and enter the "User Profile" page and take the last part of the URL.
-   Example: If the URL is :code:`https://localhost:8000/users/anna/`, then :code:`your_username` is :code:`anna`.
+   Example: If the URL is :code:`https://127.0.0.1:8000/users/anna/`, then :code:`your_username` is :code:`anna`.
 
 2. After granting the permission, you can enter the admin page. The link to the admin page
    can be found by this user in the menu item which is named after the user.
@@ -195,7 +194,7 @@ List all submodules in the :code:`.envs/.django` in a line
 
 .. code-block::
 
-    TOPOBANK_PLUGINS="topobank-statistics topobank-contact"
+    TOPOBANK_PLUGINS="topobank-statistics topobank-contact topobank-publication ce-ui"
 
 separated by whitespace.
 
@@ -242,7 +241,7 @@ Open a shell in the PostgreSQL container:
 
 .. code-block::
 
-    docker compose run --rm postgres /bin/bash
+    docker compose exec postgres /bin/bash
 
 Run the import:
 
