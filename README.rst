@@ -9,6 +9,8 @@ The modules
 * `topobank <https://github.com/ContactEngineering/topobank>`_
 * `topobank-statistics <https://github.com/ContactEngineering/topobank-statistics>`_
 * `topobank-contact <https://github.com/ContactEngineering/topobank-contact>`_
+* `topobank-publication <https://github.com/ContactEngineering/topobank-publication>`_
+* `ce-ui <https://github.com/ContactEngineering/ce-ui>`_
 
 are included as submodules. The stack consists of
 
@@ -195,7 +197,7 @@ List all submodules in the :code:`.envs/.django` in a line
 
 .. code-block::
 
-    TOPOBANK_PLUGINS="topobank-statistics topobank-contact"
+    TOPOBANK_PLUGINS="topobank-statistics topobank-contact topobank-publication ce-ui"
 
 separated by whitespace.
 
