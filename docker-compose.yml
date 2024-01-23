@@ -37,8 +37,14 @@ services:
       - .:/development-stack
       - exchange_data:/tmp/exchange
     env_file:
-      - ./.envs/.django
-      - ./.envs/.postgres
+      - path: ./.envs/.django
+        required: true
+      - path: ./.envs/.postgres
+        required: true
+      - path: ./.envs/.orcid
+        required: true
+      - path: ./.envs/.datacite
+        required: false
     ports:
       - "8000:8000"
     networks:

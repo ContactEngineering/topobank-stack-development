@@ -73,15 +73,13 @@ Enter the project directory:
 
     cd topobank-stack-development
 
-In order to run the application, copy the configuration template by
+In order to run the application, copy the orcid configuration template by
 
 .. code-block::
 
-    cp .envs/.django.template .envs/.django
+    cp .envs/.orcid.template .envs/.orcid
 
-and edit the file :code:`.envs/.django` according to your needs, fill out the values needed.
-
-What you absolutely need to replace the values here:
+and edit the file :code:`.envs/.orcid` and replace the values here:
 
 .. code-block::
 
@@ -90,11 +88,15 @@ What you absolutely need to replace the values here:
 
 In order to find these values, register a public API client (see next chapter).
 
-If you want to create test DOIs from the application, also provide values
-for :code:`DATACITE_USERNAME`, :code:`DATACITE_PASSWORD`, and :code:`PUBLICATION_DOI_PREFIX`.
-By default the DOI generation is skipped.
+If you want to create test DOIs from the application, also copy and the datacite configuration template by
 
-The rest of the settings should be fine as default for development.
+.. code-block::
+
+   cp .envs/.datacite.template .envs/.datacite
+
+This is **Optional**, by default the DOI generation is skipped.
+
+The rest of the settings in :code:`.envs/.django` should be fine as default for development.
 
 Register a public API client
 ............................
