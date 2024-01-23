@@ -107,23 +107,7 @@ for the following purposes:
 
 See `here <https://info.orcid.org/documentation/integration-guide/registering-a-public-api-client/>`_ for more information
 how to do it.
-As redirect URL add all of these
-
-- for development: http://127.0.0.1:8000/accounts/orcid/login/callback
-- for development: http://localhost:8000/accounts/orcid/login/callback
-
-One of the redirect URL configured at orcid.org must exactly match the redirect URL, which is
-transferred from the TopoBank application during the login process.
-This means, if you use
-
- http://localhost:8000
-
-i.e. :code:`localhost` instead of :code:`127.0.0.1` during development, you'll need also redirect
-url with :code:`localhost` which is
-
- http://localhost:8000/accounts/orcid/login/callback
-
-If you have both :code:`localhost` and :code:`127.0.0.1`, it shoudn't matter.
+As redirect URL add `http://127.0.0.1:8000/accounts/orcid/login/callback`
 
 Compiling
 ---------
@@ -172,7 +156,7 @@ is linked to the group :code:`all` and add permissions for all commonly availabl
    You have to replace :code:`your_username` with the correct username.
    In order to find it, login with your ORCID
    and enter the "User Profile" page and take the last part of the URL.
-   Example: If the URL is :code:`https://localhost:8000/users/anna/`, then :code:`your_username` is :code:`anna`.
+   Example: If the URL is :code:`https://127.0.0.1:8000/users/anna/`, then :code:`your_username` is :code:`anna`.
 
 2. After granting the permission, you can enter the admin page. The link to the admin page
    can be found by this user in the menu item which is named after the user.
