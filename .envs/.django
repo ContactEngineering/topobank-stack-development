@@ -59,6 +59,7 @@ PUBLICATION_DOI_MANDATORY=False
 # Storage settings
 # ------------------------------------------------------------------------------
 USE_S3_STORAGE=yes
+TOPOBANK_UPLOAD_METHOD=PUT
 
 AWS_ACCESS_KEY_ID=admin
 AWS_SECRET_ACCESS_KEY=secret12
