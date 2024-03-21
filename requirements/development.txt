@@ -30,9 +30,9 @@ billiard==4.2.0
     # via celery
 bleach==6.1.0
     # via topobank-publication (../topobank-publication/pyproject.toml)
-boto3==1.34.67
+boto3==1.34.68
     # via topobank (../topobank/pyproject.toml)
-botocore==1.34.67
+botocore==1.34.68
     # via
     #   boto3
     #   s3transfer
@@ -42,6 +42,7 @@ celery[redis]==5.3.6
     # via topobank (../topobank/pyproject.toml)
 certifi==2024.2.2
     # via
+    #   netcdf4
     #   requests
     #   selenium
 cffi==1.16.0
@@ -210,7 +211,7 @@ iniconfig==2.0.0
     # via pytest
 ipdb==0.13.13
     # via topobank (../topobank/pyproject.toml)
-ipython==8.18.1
+ipython==8.22.2
     # via
     #   ipdb
     #   topobank (../topobank/pyproject.toml)
@@ -393,7 +394,7 @@ pytest-html==4.1.1
     # via pytest-selenium
 pytest-metadata==3.1.1
     # via pytest-html
-pytest-mock==3.12.0
+pytest-mock==3.13.0
     # via topobank (../topobank/pyproject.toml)
 pytest-selenium==4.1.0
     # via topobank (../topobank/pyproject.toml)
@@ -512,7 +513,7 @@ sqlparse==0.4.4
     #   topobank (../topobank/pyproject.toml)
 stack-data==0.6.3
     # via ipython
-surfacetopography==1.13.11
+surfacetopography==1.13.12
     # via
     #   contactmechanics
     #   topobank (../topobank/pyproject.toml)
@@ -545,7 +546,7 @@ tzdata==2024.1
     # via
     #   celery
     #   pandas
-urllib3[socks]==1.26.18
+urllib3[socks]==2.2.1
     # via
     #   botocore
     #   pytest-splinter
