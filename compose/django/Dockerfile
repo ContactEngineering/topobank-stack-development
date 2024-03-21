@@ -3,6 +3,8 @@
 # See here: https://github.com/numpy/numpy/issues/20089
 FROM python:3.10-slim
 
+SHELL ["/bin/bash", "-c"]
+
 ENV PYTHONUNBUFFERED 1
 
 ARG USER_ID
@@ -24,28 +26,19 @@ RUN apt-get update \
     zlib1g-dev \
     libfreetype6-dev \
     liblcms2-dev \
-    libpq-dev
+    libpq-dev \
+    python3-dev \
+    python3-venv \
+    python3-pip \
+    libgtk-3-0 libdbus-glib-1-2
 
 # clean up image
 RUN apt-get -qy autoremove
 
 #
-# Extra requirements for exporting plots in bokeh
-#
-RUN apt-get install --yes libgtk-3-0 libdbus-glib-1-2
-
-# Upgrade pip, so package 'cryptography' does not need to be compiled with rust
-RUN pip install --upgrade pip
-
-#
 # Install requirements for TopoBank
 #
 WORKDIR /
-RUN pip install --upgrade setuptools
-
-RUN --mount=type=cache,target=/root/.cache --mount=type=secret,id=development_txt pip install -r /run/secrets/development_txt --ignore-installed
-
-RUN pip install flower  # This is not a dependency of TopoBank, but we need it for monitoring
 
 # Here the entrypoint from production settings is taken!
 COPY ./compose/django/scripts /scripts
@@ -58,6 +51,7 @@ RUN addgroup django --gid ${GROUP_ID} \
 #
 # TODO check, can we use --disabled-login ??
 
+RUN mkdir /venv && chown -R django.django /venv
 RUN chown -R django.django /scripts
 
 #

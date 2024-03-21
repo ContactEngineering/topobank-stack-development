@@ -9,6 +9,7 @@ volumes:
   local_postgres_data_backups: {}
   minio_data: {}
   exchange_data: {}
+  venv: {}
 
 networks:
   # this network was added in order to define an alias for the minio container
@@ -16,7 +17,7 @@ networks:
   topobank_net:
 
 services:
-  django: &django
+  make-venv:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile
@@ -25,26 +26,38 @@ services:
         GROUP_ID: ${TOPOBANK_GID:-0}
       secrets:
         - development_txt
+    image: topobank_development_django
+    volumes:
+      - .:/development-stack
+      - venv:/venv
+    env_file:
+      - ./.envs/.django
+    entrypoint: /bin/bash
+    command: /scripts/make-venv.sh
+
+  django: &django
     shm_size: '2gb'
     image: topobank_development_django
     depends_on:
-      - postgres
-      - mailhog
-      - redis
-      - minio
-      - minio-create-buckets
+      make-venv:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_started
+      mailhog:
+        condition: service_started
+      redis:
+        condition: service_started
+      minio:
+        condition: service_started
+      minio-create-buckets:
+        condition: service_started
     volumes:
       - .:/development-stack
       - exchange_data:/tmp/exchange
+      - venv:/venv
     env_file:
-      - path: ./.envs/.django
-        required: true
-      - path: ./.envs/.postgres
-        required: true
-      - path: ./.envs/.orcid
-        required: true
-      - path: ./.envs/.datacite
-        required: false
+      - ./.envs/.django
+      - ./.envs/.postgres
     ports:
       - "8000:8000"
     networks:

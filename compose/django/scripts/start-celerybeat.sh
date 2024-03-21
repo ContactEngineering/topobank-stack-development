@@ -3,6 +3,6 @@
 set -o errexit
 set -o nounset
 
-echo "-> Starting Celery flower..."
+echo "-> Starting Celery beat..."
 
-celery -A topobank.taskapp flower
+celery -A topobank.taskapp beat

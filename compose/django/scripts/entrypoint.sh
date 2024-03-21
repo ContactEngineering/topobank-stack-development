@@ -4,8 +4,8 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-# Install plugins
-/scripts/install-plugins.sh
+# Python environment
+source /venv/bin/activate
 
 # N.B. If only .env files supported variable expansion...
 #export CELERY_BROKER_URL="${REDIS_URL}"
@@ -17,7 +17,7 @@ fi
 export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
 
 postgres_ready() {
-python << END
+python3 << END
 import sys
 
 import psycopg2
