@@ -5,4 +5,4 @@ set -o nounset
 
 echo "-> Starting Celery beat..."
 
-celery -A topobank.taskapp beat
+celery -A topobank.taskapp beat -l INFO

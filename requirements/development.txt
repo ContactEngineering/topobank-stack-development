@@ -12,7 +12,7 @@ argon2-cffi==23.1.0
     # via topobank (../topobank/pyproject.toml)
 argon2-cffi-bindings==21.2.0
     # via argon2-cffi
-asgiref==3.7.2
+asgiref==3.8.0
     # via django
 asttokens==2.4.1
     # via stack-data
@@ -28,9 +28,9 @@ beautifulsoup4==4.12.3
     # via topobank (../topobank/pyproject.toml)
 billiard==4.2.0
     # via celery
-boto3==1.34.59
+boto3==1.34.67
     # via topobank (../topobank/pyproject.toml)
-botocore==1.34.59
+botocore==1.34.67
     # via
     #   boto3
     #   s3transfer
@@ -70,7 +70,7 @@ contactmechanics==1.2.0
     #   topobank-contact (../topobank-contact/pyproject.toml)
 contourpy==1.2.0
     # via matplotlib
-coverage[toml]==7.4.3
+coverage[toml]==7.4.4
     # via
     #   django-coverage-plugin
     #   pytest-cov
@@ -151,7 +151,7 @@ django-trackstats==0.7.0
     # via topobank (../topobank/pyproject.toml)
 django-watchman==1.3.0
     # via topobank (../topobank/pyproject.toml)
-djangorestframework==3.14.0
+djangorestframework==3.15.0
     # via topobank (../topobank/pyproject.toml)
 docutils==0.19
     # via
@@ -169,11 +169,11 @@ executing==2.0.1
     # via stack-data
 factory-boy==3.3.0
     # via topobank (../topobank/pyproject.toml)
-faker==24.1.0
+faker==24.3.0
     # via factory-boy
 flake8==7.0.0
     # via topobank (../topobank/pyproject.toml)
-fonttools==4.49.0
+fonttools==4.50.0
     # via matplotlib
 freezegun==1.4.0
     # via topobank (../topobank/pyproject.toml)
@@ -200,15 +200,15 @@ idna==3.6
     # via
     #   requests
     #   trio
-igor2==0.5.3
+igor2==0.5.5
     # via surfacetopography
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==7.0.2
+importlib-metadata==7.1.0
     # via
     #   build
     #   sphinx
-importlib-resources==6.1.3
+importlib-resources==6.4.0
     # via matplotlib
 iniconfig==2.0.0
     # via pytest
@@ -417,7 +417,6 @@ pytz==2024.1
     # via
     #   django-notifications-hq
     #   django-trackstats
-    #   djangorestframework
     #   pandas
 pyyaml==6.0.1
     # via
@@ -436,11 +435,11 @@ requests==2.31.0
     #   sphinx
     #   surfacetopography
     #   topobank (../topobank/pyproject.toml)
-requests-oauthlib==1.3.1
+requests-oauthlib==1.4.0
     # via django-allauth
 rich==13.7.1
     # via meshio
-s3transfer==0.10.0
+s3transfer==0.10.1
     # via boto3
 scipy==1.12.0
     # via
@@ -524,11 +523,11 @@ tomli==2.0.1
     #   pyproject-hooks
     #   pytest
     #   setuptools-scm
-traitlets==5.14.1
+traitlets==5.14.2
     # via
     #   ipython
     #   matplotlib-inline
-trio==0.24.0
+trio==0.25.0
     # via
     #   selenium
     #   trio-websocket
@@ -565,7 +564,7 @@ wcwidth==0.2.13
     # via prompt-toolkit
 werkzeug==3.0.1
     # via topobank (../topobank/pyproject.toml)
-wheel==0.42.0
+wheel==0.43.0
     # via pip-tools
 whitenoise==6.6.0
     # via topobank (../topobank/pyproject.toml)
@@ -575,7 +574,7 @@ xarray==2024.2.0
     # via topobank (../topobank/pyproject.toml)
 xmltodict==0.13.0
     # via surfacetopography
-zipp==3.17.0
+zipp==3.18.1
     # via
     #   importlib-metadata
     #   importlib-resources
