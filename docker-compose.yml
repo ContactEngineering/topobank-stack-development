@@ -57,6 +57,7 @@ services:
       - venv:/venv
     env_file:
       - ./.envs/.django
+      - ./.envs/.orcid
       - ./.envs/.postgres
     ports:
       - "8000:8000"
@@ -99,19 +100,16 @@ services:
 
   celeryworker:
     <<: *django
-    image: topobank_development_celeryworker
     ports: [] # overwrites ports from django entry
     command: /scripts/start-celeryworker.sh
 
   celerybeat:
     <<: *django
-    image: topobank_development_celerybeat
     ports: [] # overwrites ports from django entry
     command: /scripts/start-celerybeat.sh
 
   celeryflower:
     <<: *django
-    image: topobank_development_celeryflower
     ports: # overwrites ports from django entry
       - "5555:5555"
     command: /scripts/start-celeryflower.sh

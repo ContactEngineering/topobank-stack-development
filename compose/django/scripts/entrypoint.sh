@@ -4,6 +4,9 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
+# Silence all safe.directory warnings
+git config --global --add safe.directory '*'
+
 # Python environment
 source /venv/bin/activate
 
