@@ -30,6 +30,7 @@ RUN apt-get update \
     python3-dev \
     python3-venv \
     python3-pip \
+    libhdf5-dev libnetcdf-dev \
     libgtk-3-0 libdbus-glib-1-2
 
 # clean up image
