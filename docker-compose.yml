@@ -83,6 +83,12 @@ services:
       - "5433:5432"
     networks:
       - topobank_net
+    healthcheck:
+      test: pg_isready
+      interval: 5s
+      timeout: 60s
+      retries: 5
+      start_period: 30s
 
   mailhog:
     image: mailhog/mailhog:v1.0.1

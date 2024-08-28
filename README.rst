@@ -227,7 +227,7 @@ To configure tests in PyCharm, please consider the following:
 * In `File->Settings->Docker->Tools` enable Docker Compose V2
 * Create a new interpreter `On Docker Compose...` that runs within the compose configuration
 * Create a new `pytest` configuration that runs within this interpreter. Add
-  `DJANGO_SETTINGS_MODULE=config.settings.test` to the environment.
+  `DJANGO_SETTINGS_MODULE=topobank.settings.test` to the environment.
 * For testing plugins, also add `PYTHONPATH=/development-stack/topobank` to the environment.
 
 Import a database dump
