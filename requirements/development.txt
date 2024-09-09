@@ -8,6 +8,8 @@ alabaster==0.7.16
     # via sphinx
 amqp==5.2.0
     # via kombu
+annotated-types==0.7.0
+    # via pydantic
 appdirs==1.4.4
     # via pint
 argon2-cffi==23.1.0
@@ -30,9 +32,9 @@ billiard==4.2.0
     # via celery
 bleach==6.1.0
     # via topobank-publication (../topobank-publication/pyproject.toml)
-boto3==1.35.6
+boto3==1.35.12
     # via topobank (../topobank/pyproject.toml)
-botocore==1.35.6
+botocore==1.35.12
     # via
     #   boto3
     #   s3transfer
@@ -43,16 +45,12 @@ celery[redis]==5.4.0
     #   ce-ui (../ce-ui/pyproject.toml)
     #   django-celery-results
     #   topobank (../topobank/pyproject.toml)
-certifi==2024.7.4
-    # via
-    #   netcdf4
-    #   requests
-cffi==1.17.0
+certifi==2024.8.30
+    # via requests
+cffi==1.17.1
     # via
     #   argon2-cffi-bindings
     #   cryptography
-cftime==1.6.4
-    # via netcdf4
 charset-normalizer==3.3.2
     # via requests
 click==8.1.7
@@ -70,7 +68,7 @@ click-repl==0.3.0
     # via celery
 contactmechanics==1.5.0
     # via topobank-contact (../topobank-contact/pyproject.toml)
-contourpy==1.2.1
+contourpy==1.3.0
     # via matplotlib
 coverage[toml]==7.6.1
     # via
@@ -79,7 +77,7 @@ coverage[toml]==7.6.1
     #   topobank (../topobank/pyproject.toml)
 crispy-bootstrap5==2024.2
     # via topobank (../topobank/pyproject.toml)
-cryptography==43.0.0
+cryptography==43.0.1
     # via
     #   fido2
     #   pyopenssl
@@ -106,7 +104,7 @@ discoverversion==0.2.4
     #   topobank-statistics (../topobank-statistics/pyproject.toml)
 dj-inmemorystorage==2.1.0
     # via topobank (../topobank/pyproject.toml)
-django==4.2.15
+django==4.2.16
     # via
     #   crispy-bootstrap5
     #   dj-inmemorystorage
@@ -129,7 +127,7 @@ django==4.2.15
     #   drf-spectacular
     #   jsonfield
     #   topobank (../topobank/pyproject.toml)
-django-allauth==64.1.0
+django-allauth==64.2.0
     # via topobank (../topobank/pyproject.toml)
 django-celery-results==2.5.1
     # via topobank (../topobank/pyproject.toml)
@@ -147,7 +145,7 @@ django-extensions==3.2.3
     # via topobank (../topobank/pyproject.toml)
 django-guardian==2.4.0
     # via topobank (../topobank/pyproject.toml)
-django-model-utils==4.5.1
+django-model-utils==5.0.0
     # via django-notifications-hq
 django-notifications-hq==1.8.3
     # via topobank (../topobank/pyproject.toml)
@@ -157,7 +155,7 @@ django-request-profiler==1.1
     # via topobank (../topobank/pyproject.toml)
 django-storages==1.14.4
     # via topobank (../topobank/pyproject.toml)
-django-tagulous==2.0.0
+django-tagulous==2.1.0
     # via topobank (../topobank/pyproject.toml)
 django-termsandconditions==2.0.12
     # via ce-ui (../ce-ui/pyproject.toml)
@@ -179,11 +177,11 @@ drf-spectacular==0.27.2
     # via topobank (../topobank/pyproject.toml)
 et-xmlfile==1.1.0
     # via openpyxl
-executing==2.0.1
+executing==2.1.0
     # via stack-data
 factory-boy==3.3.1
     # via topobank (../topobank/pyproject.toml)
-faker==28.0.0
+faker==28.4.1
     # via factory-boy
 fido2==1.1.3
     # via topobank (../topobank/pyproject.toml)
@@ -207,12 +205,8 @@ greenlet==3.0.3
     #   topobank (../topobank/pyproject.toml)
 gunicorn[gevent]==23.0.0
     # via topobank (../topobank/pyproject.toml)
-h5netcdf==1.3.0
-    # via topobank (../topobank/pyproject.toml)
 h5py==3.11.0
-    # via
-    #   h5netcdf
-    #   surfacetopography
+    # via surfacetopography
 idna==3.8
     # via requests
 idutils==1.2.1
@@ -227,7 +221,7 @@ iniconfig==2.0.0
     # via pytest
 ipdb==0.13.13
     # via topobank (../topobank/pyproject.toml)
-ipython==8.26.0
+ipython==8.27.0
     # via ipdb
 isbnlib==3.10.14
     # via idutils
@@ -253,7 +247,7 @@ jsonschema==4.23.0
     #   drf-spectacular
 jsonschema-specifications==2023.12.1
     # via jsonschema
-kiwisolver==1.4.5
+kiwisolver==1.4.7
     # via matplotlib
 kombu==5.4.0
     # via celery
@@ -283,15 +277,12 @@ mufft==0.92.0
     #   surfacetopography
 mugrid==0.92.4
     # via mufft
-netcdf4==1.7.1.post2
-    # via topobank (../topobank/pyproject.toml)
 numpi==0.6.1
     # via
     #   contactmechanics
     #   surfacetopography
-numpy==2.1.0
+numpy==2.1.1
     # via
-    #   cftime
     #   contactmechanics
     #   contourpy
     #   h5py
@@ -302,7 +293,6 @@ numpy==2.1.0
     #   ml-dtypes
     #   mufft
     #   mugrid
-    #   netcdf4
     #   numpyencoder
     #   opt-einsum
     #   pandas
@@ -322,7 +312,6 @@ packaging==24.1
     # via
     #   build
     #   gunicorn
-    #   h5netcdf
     #   matplotlib
     #   pytest
     #   pytest-sugar
@@ -368,6 +357,10 @@ pycodestyle==2.12.1
     # via flake8
 pycparser==2.22
     # via cffi
+pydantic==2.8.2
+    # via topobank (../topobank/pyproject.toml)
+pydantic-core==2.20.1
+    # via pydantic
 pyflakes==3.2.0
     # via flake8
 pygments==2.18.0
@@ -395,7 +388,7 @@ pytest==8.3.2
     #   topobank (../topobank/pyproject.toml)
 pytest-cov==5.0.0
     # via topobank (../topobank/pyproject.toml)
-pytest-django==4.8.0
+pytest-django==4.9.0
     # via topobank (../topobank/pyproject.toml)
 pytest-env==1.1.3
     # via topobank (../topobank/pyproject.toml)
@@ -498,7 +491,7 @@ swapper==1.4.0
     # via django-notifications-hq
 termcolor==2.4.0
     # via pytest-sugar
-tifffile==2024.8.24
+tifffile==2024.8.30
     # via tiffile
 tiffile==2018.10.18
     # via surfacetopography
@@ -512,6 +505,8 @@ typing-extensions==4.12.2
     #   flexparser
     #   pint
     #   psycopg
+    #   pydantic
+    #   pydantic-core
 tzdata==2024.1
     # via
     #   celery
@@ -544,7 +539,7 @@ xmltodict==0.13.0
     # via surfacetopography
 zope-event==5.0
     # via gevent
-zope-interface==7.0.2
+zope-interface==7.0.3
     # via gevent
 
 # The following packages are considered to be unsafe in a requirements file:
