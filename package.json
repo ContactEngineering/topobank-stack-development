@@ -37,7 +37,7 @@
     "mitt": "^3.0.1",
     "netcdfjs": "^3.0.0",
     "nouislider": "^15.8.1",
-    "openseadragon": "^4.1.1",
+    "openseadragon": "^5.0.0",
     "popper.js": "^1.16.1",
     "proj4": "^2.12.1",
     "regl": "^2.1.0",
