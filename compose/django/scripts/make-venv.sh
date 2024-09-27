@@ -18,6 +18,8 @@ pip install flower
 
 echo "-> Installing plugins..."
 for plugin in ${TOPOBANK_PLUGINS}; do
+    echo "-> Installing ${plugin}..."
+    git config --global --add safe.directory /development-stack/${plugin}
     pip install -v -e /development-stack/${plugin}[dev]
 done
 
