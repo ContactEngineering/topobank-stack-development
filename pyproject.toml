@@ -1,0 +1,29 @@
+[project]
+name = "topobank-stack-development"
+version = "0.1.0"
+description = "Development version of the topobank stack"
+readme = "README.rst"
+authors = [
+    { name = "Michael Röttger", email = "info@michael-roettger.de" },
+    { name = "Lars Pastewka", email = "lars.pastewka@imtek.uni-freiburg.de" },
+    { name = "Ioannis Nezis", email = "ioannis@nezis.de" },
+]
+requires-python = ">=3.12"
+dependencies = [
+    "flower>=2.0.1",
+    "topobank",
+    "topobank-contact",
+    "topobank-publication",
+    "topobank-statistics",
+    "ce-ui",
+]
+
+[tool.uv.sources]
+topobank = { path = "topobank" }
+topobank-contact = { path = "topobank-contact" }
+topobank-publication = { path = "topobank-publication" }
+topobank-statistics = { path = "topobank-statistics" }
+ce-ui = { path = "ce-ui" }
+
+[dependency-groups]
+dev = ["werkzeug>=3.1.1"]

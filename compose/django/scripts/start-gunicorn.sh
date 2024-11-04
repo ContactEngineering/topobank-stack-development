@@ -17,8 +17,8 @@ python manage.py register_analysis_functions
 # plus replaced the values of "client_id" and "secret" with environment variables.
 #
 
-#echo "-> Collecting static files.."
-#python manage.py collectstatic --noinput
+echo "-> Collecting static files.."
+python manage.py collectstatic --noinput
 
 echo "-> ** Skipping collection of static files..." **
 

@@ -15,30 +15,15 @@ networks:
   topobank_net:
 
 services:
-  make-venv:
+  django: &django
+    shm_size: '2gb'
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile
       args:
-        USER_ID: ${TOPOBANK_UID:-0}
-        GROUP_ID: ${TOPOBANK_GID:-0}
-      secrets:
-        - development_txt
-    image: topobank_development_django
-    volumes:
-      - .:/development-stack
-      - venv:/venv
-    env_file:
-      - ./.envs/.django
-    entrypoint: /bin/bash
-    command: /scripts/make-venv.sh
-
-  django: &django
-    shm_size: '2gb'
-    image: topobank_development_django
+          USER_ID: ${TOPOBANK_UID:-0}
+          GROUP_ID: ${TOPOBANK_GID:-0}
     depends_on:
-      make-venv:
-        condition: service_completed_successfully
       postgres:
         condition: service_started
       mailhog:
@@ -50,9 +35,7 @@ services:
       minio-create-buckets:
         condition: service_started
     volumes:
-      - .:/development-stack
       - exchange_data:/tmp/exchange
-      - venv:/venv
     env_file:
       - ./.envs/.django
       - ./.envs/.orcid
@@ -61,8 +44,18 @@ services:
       - "8000:8000"
     networks:
       - topobank_net
-    command: /scripts/start-gunicorn.sh
     init: true
+    develop:
+      watch:
+        - action: sync
+          path: ./static/
+          target: /app/static/
+        - action: sync
+          path: ./topobank/
+          target: /app/topobank/
+        # Rebuild the image on changes to the `pyproject.toml`
+        - action: rebuild
+          path: ./pyproject.toml
 
   webpack:
     image: node
@@ -149,7 +142,6 @@ services:
           # Like this, the URL given for accessing the S3 can be resolved
           # on the host computer, because minio is exposed to port 9000 on host
           - topobank-minio-alias
-
     volumes:
       - minio_data:/data
     environment:
