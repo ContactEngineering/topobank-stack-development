@@ -53,10 +53,17 @@ services:
         - action: sync
           path: ./topobank/
           target: /app/topobank/
-        # Rebuild the image on changes to the `pyproject.toml`
+        - action: sync
+          path: ./ce-ui/
+          target: /app/ce-ui/
         - action: rebuild
-          path: ./pyproject.toml
-
+          path: ./ce-ui/pyproject.toml
+        - action: rebuild
+          path: ./topobank-contact/pyproject.toml
+        - action: rebuild
+          path: ./topobank-statistics/pyproject.toml
+        - action: rebuild
+          path: ./topobank-publication/pyproject.toml
   webpack:
     image: node
     volumes:
