@@ -1,7 +1,7 @@
 # While an Alpine-based container would be preferable, we use a glibc-based
 # container because there are only have manylinux wheels for numpy and scipy.
 # See here: https://github.com/numpy/numpy/issues/20089
-FROM python:3.12-slim
+FROM python:3.13-slim
 
 SHELL ["/bin/bash", "-c"]
 
