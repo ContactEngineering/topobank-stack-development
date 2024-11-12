@@ -14,6 +14,10 @@ module.exports = {
             import: 'topobank/manager/surface_detail_app.js',
             dependOn: 'base'
         },
+        topnav_app: {
+            import: 'topobank/base/topnav_app.js',
+            dependOn: 'base'
+        },
         topography_detail_app: {
             import: 'topobank/manager/topography_detail_app.js',
             dependOn: 'base'
