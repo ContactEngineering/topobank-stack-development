@@ -14,13 +14,13 @@ source /venv/bin/activate
 
 pip install --upgrade pip
 pip install -v -r /development-stack/requirements/development.txt
-pip install flower
+pip install flower meson-python ninja flit_core
 
 echo "-> Installing plugins..."
 for plugin in ${TOPOBANK_PLUGINS}; do
     echo "-> Installing ${plugin}..."
     git config --global --add safe.directory /development-stack/${plugin}
-    pip install -v -e /development-stack/${plugin}[dev]
+    pip install -v --no-build-isolation --editable /development-stack/${plugin}[dev]
 done
 
 touch /venv/VENV-READY
