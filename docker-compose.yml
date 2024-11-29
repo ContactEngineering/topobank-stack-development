@@ -62,12 +62,15 @@ services:
     networks:
       - topobank_net
     command: /scripts/start-gunicorn.sh
+    init: true
 
   webpack:
     image: node
     volumes:
       - .:/development-stack
     command: bash -c 'cd /development-stack ; npm install ; npm run dev'
+    init: true
+    stop_signal: SIGKILL
 
   postgres:
     build:
@@ -89,6 +92,7 @@ services:
       timeout: 60s
       retries: 5
       start_period: 30s
+    init: true
 
   mailhog:
     image: mailhog/mailhog:v1.0.1
@@ -96,27 +100,32 @@ services:
       - "8025:8025"
     networks:
       - topobank_net
+    init: true
 
   redis:
     image: redis:7-alpine
     networks:
       - topobank_net
+    init: true
 
   celeryworker:
     <<: *django
     ports: [] # overwrites ports from django entry
     command: /scripts/start-celeryworker.sh
+    init: true
 
   celerybeat:
     <<: *django
     ports: [] # overwrites ports from django entry
     command: /scripts/start-celerybeat.sh
+    init: true
 
   celeryflower:
     <<: *django
     ports: # overwrites ports from django entry
       - "5555:5555"
     command: /scripts/start-celeryflower.sh
+    init: true
 
   #
   # use can this built-in S3 server for development if you don't have an external one
@@ -153,6 +162,7 @@ services:
       retries: 1
       start_period: 5s
       timeout: 5s
+    init: true
 
   minio-create-buckets:
     image: minio/mc
