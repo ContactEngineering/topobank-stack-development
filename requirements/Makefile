@@ -6,7 +6,7 @@ setup_files := ../topobank/pyproject.toml ../topobank-statistics/pyproject.toml 
 all: $(outputs)
 
 development.txt: $(setup_files)
-	pip-compile --extra dev -v --resolver=backtracking --output-file $@ ../topobank/pyproject.toml ../topobank-statistics/pyproject.toml ../topobank-contact/pyproject.toml ../topobank-publication/pyproject.toml ../ce-ui/pyproject.toml
+	uv pip compile --extra dev -v --resolver=backtracking --output-file $@ ../topobank/pyproject.toml ../topobank-statistics/pyproject.toml ../topobank-contact/pyproject.toml ../topobank-publication/pyproject.toml ../ce-ui/pyproject.toml
 
 check:
 	@which pip-compile > /dev/null
