@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const {ModuleFederationPlugin} = require('webpack').container;
-const {VueLoaderPlugin} = require('vue-loader');
+const { ModuleFederationPlugin } = require('webpack').container;
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
     entry: {
@@ -21,6 +21,9 @@ module.exports = {
         topography_detail_app: {
             import: 'topobank/manager/topography_detail_app.js',
             dependOn: 'base'
+        },
+        publish_app: {
+            import: 'topobank/publish/publish_app.js',
         }
     },
     output: {
@@ -71,10 +74,10 @@ module.exports = {
         new VueLoaderPlugin(),
         new ModuleFederationPlugin({
             shared: {
-                '@bokeh/bokehjs': {singleton: true, eager: true},
-                bootstrap: {singleton: true, eager: true},
-                jquery: {singleton: true, eager: true},
-                vue: {singleton: true, eager: true}
+                '@bokeh/bokehjs': { singleton: true, eager: true },
+                bootstrap: { singleton: true, eager: true },
+                jquery: { singleton: true, eager: true },
+                vue: { singleton: true, eager: true }
             }
         })
     ]
