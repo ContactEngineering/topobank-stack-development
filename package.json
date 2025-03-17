@@ -23,7 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "axios": "^1.8.3",
     "bootstrap": "^5.3.3",
-    "bootstrap-vue-next": "^0.26.30",
+    "bootstrap-vue-next": "^0.28.0",
     "choices.js": "^11.1.0",
     "datatables.net-bs5": "^2.2.2",
     "datatables.net-vue3": "^3.0.4",
