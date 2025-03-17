@@ -4,7 +4,7 @@ const {VueLoaderPlugin} = require('vue-loader');
 
 module.exports = {
     entry: {
-        app: 'topobank/app.ts'
+        app: '@/app.ts'
     }, output: {
         path: path.resolve(__dirname, 'static/js'),
         filename: '[name].bundle.js',
@@ -36,8 +36,7 @@ module.exports = {
     }, resolve: {
         alias: {
             topobank: path.resolve(__dirname, 'ce-ui/frontend'),
-            topobank_statistics: path.resolve(__dirname, 'topobank-statistics/frontend'),
-            topobank_contact: path.resolve(__dirname, 'topobank-contact/frontend')
+            "@": path.resolve(__dirname, 'ce-ui/frontend')
         }, extensions: ['.js', '.ts', '.scss', '.vue']
     }, plugins: [new VueLoaderPlugin()]
 };
