@@ -112,6 +112,7 @@ django==4.2.19
     #   django-crispy-forms
     #   django-debug-toolbar
     #   django-extensions
+    #   django-filter
     #   django-guardian
     #   django-model-utils
     #   django-notifications-hq
@@ -140,6 +141,8 @@ django-debug-toolbar==5.0.1
 django-environ==0.12.0
     # via topobank (../topobank/pyproject.toml)
 django-extensions==3.2.3
+    # via topobank (../topobank/pyproject.toml)
+django-filter==25.1
     # via topobank (../topobank/pyproject.toml)
 django-guardian==2.4.0
     # via topobank (../topobank/pyproject.toml)
@@ -179,7 +182,7 @@ executing==2.2.0
     # via stack-data
 factory-boy==3.3.3
     # via topobank (../topobank/pyproject.toml)
-faker==36.1.1
+faker==36.2.2
     # via factory-boy
 fido2==1.2.0
     # via topobank (../topobank/pyproject.toml)
@@ -229,13 +232,13 @@ ipython-pygments-lexers==1.1.1
     # via ipython
 isbnlib==3.10.14
     # via idutils
-jax==0.5.1
+jax==0.5.2
     # via topobank (../topobank/pyproject.toml)
 jaxlib==0.5.1
     # via jax
 jedi==0.19.2
     # via ipython
-jinja2==3.1.5
+jinja2==3.1.6
     # via
     #   topobank (../topobank/pyproject.toml)
     #   sphinx
@@ -466,7 +469,7 @@ six==1.17.0
     #   python-dateutil
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==8.2.1
+sphinx==8.2.3
     # via
     #   topobank (../topobank/pyproject.toml)
     #   sphinx-rtd-theme
@@ -494,7 +497,7 @@ sqlparse==0.5.3
     #   django-debug-toolbar
 stack-data==0.6.3
     # via ipython
-surfacetopography==1.18.0
+surfacetopography==1.18.1
     # via
     #   topobank (../topobank/pyproject.toml)
     #   topobank-statistics (../topobank-statistics/pyproject.toml)
@@ -516,8 +519,11 @@ typing-extensions==4.12.2
     #   flexcache
     #   flexparser
     #   pint
+    #   psycopg
     #   pydantic
     #   pydantic-core
+    #   pyopenssl
+    #   referencing
 tzdata==2025.1
     # via
     #   celery
