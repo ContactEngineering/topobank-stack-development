@@ -64,13 +64,13 @@ services:
     command: /scripts/start-gunicorn.sh
     init: true
 
-#  webpack:
-#    image: node
-#    volumes:
-#      - .:/development-stack
-#    command: bash -c 'cd /development-stack ; npm install ; npm run dev'
-#    init: true
-#    stop_signal: SIGKILL
+  webpack:
+    image: node
+    volumes:
+      - .:/development-stack
+    command: bash -c 'cd /development-stack ; npm install ; npm run dev'
+    init: true
+    stop_signal: SIGKILL
 
   postgres:
     build:
