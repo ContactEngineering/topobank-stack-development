@@ -26,13 +26,11 @@ backports-entry-points-selectable==1.3.0
     # via topobank (../topobank/pyproject.toml)
 billiard==4.2.1
     # via celery
-bleach==6.2.0
-    # via topobank-publication (../topobank-publication/pyproject.toml)
-boto3==1.35.99
+boto3==1.38.1
     # via
     #   ce-ui (../ce-ui/pyproject.toml)
     #   topobank (../topobank/pyproject.toml)
-botocore==1.35.99
+botocore==1.38.10
     # via
     #   boto3
     #   s3transfer
@@ -102,7 +100,7 @@ discoverversion==0.2.6
     #   surfacetopography
 dj-inmemorystorage==2.1.0
     # via topobank (../topobank/pyproject.toml)
-django==4.2.19
+django==4.2.20
     # via
     #   topobank (../topobank/pyproject.toml)
     #   crispy-bootstrap5
@@ -274,6 +272,8 @@ matplotlib-inline==0.1.7
     # via ipython
 mccabe==0.7.0
     # via flake8
+mergedeep==1.3.4
+    # via topobank (../topobank/pyproject.toml)
 ml-dtypes==0.5.1
     # via
     #   jax
@@ -447,7 +447,7 @@ rpds-py==0.23.1
     # via
     #   jsonschema
     #   referencing
-s3transfer==0.10.4
+s3transfer==0.12.0
     # via boto3
 scipy==1.15.2
     # via
@@ -544,8 +544,6 @@ vine==5.1.0
     #   kombu
 wcwidth==0.2.13
     # via prompt-toolkit
-webencodings==0.5.1
-    # via bleach
 werkzeug==3.1.3
     # via topobank (../topobank/pyproject.toml)
 wheel==0.45.1
