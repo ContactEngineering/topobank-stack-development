@@ -26,9 +26,10 @@ echo "-> Loading data for ORCID authentication..."
 # create yaml file with actual values of environment variables
 envsubst < orcid.yaml.template > orcid.yaml
 
-python manage.py loaddata -v 2 orcid.yaml
+# python manage.py loaddata -v 2 orcid.yaml
 
 # python manage.py dumpdata -a -o dumpdata.yaml
 
-echo "-> Starting runserver_plus for local development..."
-python manage.py runserver_plus --keep-meta-shutdown 0.0.0.0:8000
+echo "-> Starting application for local development..."
+#python manage.py runserver_plus --keep-meta-shutdown 0.0.0.0:8000
+exec uvicorn topobank.asgi:application --lifespan on --host 0.0.0.0 --reload --reload-include '*.html'

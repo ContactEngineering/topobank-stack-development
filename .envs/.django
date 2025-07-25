@@ -17,7 +17,7 @@ DJANGO_DEFAULT_CACHE_LOCATION=redis://redis:6379/0
 
 # Static files
 # ------------------------------------------------------------------------------
-DJANGO_STATICFILES_DIR = /development-stack/ce-ui/static
+DJANGO_STATICFILES_DIR = /development-stack/static
 
 # Celery
 # ------------------------------------------------------------------------------
