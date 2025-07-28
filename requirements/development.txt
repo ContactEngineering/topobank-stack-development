@@ -68,9 +68,9 @@ click-repl==0.3.0
     # via celery
 contactmechanics==1.6.1
     # via topobank-contact (../topobank-contact/pyproject.toml)
-contourpy==1.3.2
+contourpy==1.3.3
     # via matplotlib
-coverage==7.10.0
+coverage==7.10.1
     # via
     #   topobank (../topobank/pyproject.toml)
     #   django-coverage-plugin
@@ -150,7 +150,7 @@ django-guardian==3.0.3
     # via topobank (../topobank/pyproject.toml)
 django-model-utils==5.0.0
     # via django-notifications-hq
-django-notifications-hq @ git+https://github.com/django-notifications/django-notifications.git
+django-notifications-hq @ git+https://github.com/django-notifications/django-notifications.git@4c44bcea2504d9a3fcd26366b232a13732a08f2a
     # via topobank (../topobank/pyproject.toml)
 django-redis==6.0.0
     # via topobank (../topobank/pyproject.toml)
@@ -158,7 +158,7 @@ django-request-profiler==1.1
     # via topobank (../topobank/pyproject.toml)
 django-storages==1.14.6
     # via topobank (../topobank/pyproject.toml)
-django-tagulous==2.1.1
+django-tagulous @ git+https://github.com/stephendwolff/django-tagulous.git@d80ef84bddb98d7485583d25df7131992c589f13
     # via topobank (../topobank/pyproject.toml)
 django-termsandconditions==2.0.12
     # via ce-ui (../ce-ui/pyproject.toml)
@@ -264,7 +264,7 @@ lxml==6.0.0
     # via
     #   topobank (../topobank/pyproject.toml)
     #   datacite
-markdown2==2.5.3
+markdown2==2.5.4
     # via topobank (../topobank/pyproject.toml)
 markupsafe==3.0.2
     # via
@@ -282,11 +282,11 @@ ml-dtypes==0.5.1
     # via
     #   jax
     #   jaxlib
-mufft==0.93.1
+mufft==0.94.0
     # via
     #   contactmechanics
     #   surfacetopography
-mugrid==0.93.3
+mugrid==0.95.0
     # via mufft
 numpi==0.8.2
     # via
@@ -321,6 +321,7 @@ opt-einsum==3.4.0
 packaging==25.0
     # via
     #   build
+    #   django-notifications-hq
     #   gunicorn
     #   kombu
     #   matplotlib
@@ -432,7 +433,6 @@ python-dotenv==1.1.1
     # via uvicorn
 pytz==2025.2
     # via
-    #   django-notifications-hq
     #   django-trackstats
     #   pandas
 pyyaml==6.0.2
@@ -463,7 +463,7 @@ rpds-py==0.26.0
     #   referencing
 s3transfer==0.13.1
     # via boto3
-scipy==1.16.0
+scipy==1.16.1
     # via
     #   contactmechanics
     #   jax
