@@ -2,17 +2,24 @@
 	path = topobank
 	url = git@github.com:ContactEngineering/TopoBank.git
 	branch = main
+	update = rebase
 [submodule "topobank-statistics"]
 	path = topobank-statistics
 	url = git@github.com:ContactEngineering/topobank-statistics.git
 	branch = main
+	update = rebase
 [submodule "topobank-contact"]
 	path = topobank-contact
 	url = git@github.com:ContactEngineering/topobank-contact.git
 	branch = main
+	update = rebase
 [submodule "topobank-publication"]
 	path = topobank-publication
 	url = git@github.com:ContactEngineering/topobank-publication.git
+	branch = main
+	update = rebase
 [submodule "ce-ui"]
 	path = ce-ui
 	url = git@github.com:ContactEngineering/ce-ui.git
+	branch = main
+	update = rebase
