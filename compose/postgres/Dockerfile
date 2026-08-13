@@ -1,4 +1,4 @@
-FROM postgres:17.5
+FROM postgres:18.6
 
 # The docker image automatically creates user+password+database if the appropriate
 # environment variables are set, see here:
